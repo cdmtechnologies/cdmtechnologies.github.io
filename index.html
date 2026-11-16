@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDM Technologies | Business, school and finance software for Nigeria</title>
+<meta name="description" content="CDM Technologies, Abuja: CDM ERP, CDM School, CDM People, CDM FinRep, CDM Clearance and CDM Prep. Cloud software for Nigerian businesses, schools, accountants and students.">
+<meta property="og:title" content="CDM Technologies">
+<meta property="og:description" content="Cloud software for Nigerian businesses, schools, accountants and students. Built in Abuja.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b2a55'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-weight='700' font-size='26' fill='%23fff'%3ECD%3C/text%3E%3Ccircle cx='50' cy='16' r='6' fill='%23f28c1e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0b2a55; --blue: #1662c4; --orange: #f28c1e; --ink: #0f172a; --muted: #52607a; --line: #e3e8f0; --bg: #f6f8fc; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; }
+  h1, h2, h3, .logo { font-family: Poppins, system-ui, sans-serif; line-height: 1.15; }
+  a { color: inherit; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: Poppins, sans-serif; font-weight: 600; text-decoration: none; border-radius: 12px; padding: 13px 22px; font-size: 16px; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-o { background: var(--orange); color: #fff; box-shadow: 0 8px 20px rgba(242, 140, 30, .3); }
+  .btn-w { background: rgba(255,255,255,.12); color: #fff; border: 1.5px solid rgba(255,255,255,.4); }
+  .btn-n { background: var(--navy); color: #fff; }
+
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: var(--navy); text-decoration: none; }
+  .mark { width: 38px; height: 38px; border-radius: 10px; background: var(--navy); color: #fff; display: grid; place-items: center; font-size: 16px; font-weight: 800; position: relative; }
+  .mark::after { content: ''; position: absolute; right: -3px; top: -3px; width: 12px; height: 12px; border-radius: 50%; background: var(--orange); border: 2px solid #fff; }
+  nav { display: flex; gap: 26px; align-items: center; font-weight: 500; font-size: 15px; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a:hover { color: var(--navy); }
+  nav .btn { padding: 9px 16px; font-size: 14px; color: #fff; white-space: nowrap; }
+
+  .hero { background: radial-gradient(circle at 85% 20%, #2f7fe0 0%, #164f9e 35%, var(--navy) 75%); color: #fff; overflow: hidden; position: relative; }
+  .hero::before { content: ''; position: absolute; inset: 0; opacity: .08; background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 48px 48px; }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding-top: 80px; padding-bottom: 90px; }
+  .pill { display: inline-block; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 5px 14px; font-size: 14px; font-weight: 500; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 800; letter-spacing: -1px; }
+  .hero h1 em { font-style: normal; color: #ffb35c; }
+  .hero p.lead { font-size: 19px; opacity: .9; margin: 20px 0 30px; max-width: 560px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .tiles a { background: #fff; border-radius: 18px; aspect-ratio: 1; display: grid; place-items: center; padding: 14px; box-shadow: 0 14px 30px rgba(0, 10, 40, .3); transition: transform .2s; }
+  .tiles a:hover { transform: translateY(-4px) rotate(-1deg); }
+  .tiles img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .tiles a:nth-child(2), .tiles a:nth-child(5) { transform: translateY(18px); }
+  .tiles a:nth-child(2):hover, .tiles a:nth-child(5):hover { transform: translateY(14px) rotate(-1deg); }
+
+  .strip { background: var(--bg); border-bottom: 1px solid var(--line); }
+  .strip .wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 36px; padding: 18px 20px; color: var(--muted); font-size: 15px; font-weight: 500; }
+  .strip b { color: var(--navy); }
+
+  section { padding: 84px 0; }
+  .head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+  .eyebrow { color: var(--orange); font-weight: 700; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .head h2 { font-size: clamp(28px, 3.6vw, 40px); color: var(--navy); margin: 8px 0 12px; letter-spacing: -.5px; }
+  .head p { color: var(--muted); font-size: 17px; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .card { border: 1px solid var(--line); border-radius: 20px; padding: 26px; display: flex; flex-direction: column; background: #fff; transition: box-shadow .2s, transform .2s; }
+  .card:hover { box-shadow: 0 18px 40px rgba(11, 42, 85, .1); transform: translateY(-3px); }
+  .card .top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .card img { width: 64px; height: 64px; object-fit: contain; }
+  .card h3 { font-size: 21px; color: var(--navy); }
+  .card .kind { font-size: 13px; color: var(--muted); font-weight: 500; }
+  .card p { color: #334155; font-size: 15.5px; }
+  .card ul { list-style: none; margin: 14px 0 18px; font-size: 14.5px; color: var(--muted); }
+  .card li { padding-left: 22px; position: relative; margin-bottom: 4px; }
+  .card li::before { content: ''; position: absolute; left: 2px; top: 8px; width: 10px; height: 6px; border-left: 2.5px solid var(--orange); border-bottom: 2.5px solid var(--orange); transform: rotate(-45deg); }
+  .card .go { margin-top: auto; font-family: Poppins, sans-serif; font-weight: 600; color: var(--blue); text-decoration: none; font-size: 15px; }
+  .card .go:hover { text-decoration: underline; }
+
+  .why { background: var(--bg); }
+  .why .grid { grid-template-columns: repeat(4, 1fr); }
+  .feat { background: #fff; border-radius: 18px; padding: 24px; border: 1px solid var(--line); }
+  .feat .ic { width: 46px; height: 46px; border-radius: 12px; background: #e8f0fc; color: var(--blue); display: grid; place-items: center; margin-bottom: 14px; }
+  .feat h3 { font-size: 17px; color: var(--navy); margin-bottom: 6px; }
+  .feat p { font-size: 14.5px; color: var(--muted); }
+
+  .partner { background: linear-gradient(120deg, var(--navy), #164f9e); color: #fff; border-radius: 28px; padding: 52px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 36px; align-items: center; }
+  .partner h2 { font-size: clamp(28px, 3.4vw, 38px); }
+  .partner h2 em { font-style: normal; color: #ffb35c; }
+  .partner p { opacity: .9; margin: 14px 0 24px; font-size: 17px; }
+  .stats { display: grid; gap: 14px; }
+  .stat { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 16px; padding: 16px 20px; }
+  .stat b { font-family: Poppins, sans-serif; font-size: 28px; color: #ffb35c; display: block; line-height: 1.2; }
+  .stat span { font-size: 14.5px; opacity: .9; }
+
+  .contact .grid { grid-template-columns: repeat(3, 1fr); }
+  .ct { text-align: center; padding: 30px 20px; border: 1px solid var(--line); border-radius: 20px; text-decoration: none; display: block; }
+  .ct:hover { border-color: var(--blue); }
+  .ct .ic { width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%; background: #fff3e6; color: var(--orange); display: grid; place-items: center; }
+  .ct h3 { font-size: 17px; color: var(--navy); }
+  .ct p { color: var(--muted); font-size: 15px; word-break: break-word; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,.75); font-size: 14px; padding: 36px 0; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+  footer a { text-decoration: none; color: #fff; }
+  footer .links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+  @media (max-width: 900px) {
+    nav a:not(.btn) { display: none; }
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 56px; padding-bottom: 70px; }
+    .tiles { max-width: 420px; }
+    .grid, .why .grid, .contact .grid { grid-template-columns: 1fr 1fr; }
+    .partner { grid-template-columns: 1fr; padding: 34px 24px; }
+  }
+  @media (max-width: 600px) {
+    .grid, .why .grid, .contact .grid { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .hero p.lead { font-size: 17px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="mark">CD</span>CDM Technologies</a>
+    <nav>
+      <a href="#products">Products</a><a href="#why">Why CDM</a><a href="#partners">Partners</a><a href="#contact">Contact</a>
+      <a class="btn btn-o" href="#products">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill">Made in Abuja, for Nigeria</span>
+        <h1>Software that runs <em>businesses, schools</em> and finance teams</h1>
+        <p class="lead">Six cloud products for sales and stock, school management, payroll, financial reporting, e-invoicing and professional exam preparation. Pay in naira, use them on any phone or computer.</p>
+        <div class="cta-row">
+          <a class="btn btn-o" href="#products">Explore the products</a>
+          <a class="btn btn-w" href="#partners">Earn as a partner</a>
+        </div>
+      </div>
+      <div class="tiles" aria-label="Our products">
+        <a href="https://cdm24.netlify.app" title="CDM ERP"><img src="logos/cdm24.png" alt="CDM ERP"></a>
+        <a href="https://cdmschool.bolt.host" title="CDM School"><img src="logos/cdmschool.png" alt="CDM School"></a>
+        <a href="https://cdmpeople.bolt.host" title="CDM People"><img src="logos/cdmpeople.png" alt="CDM People"></a>
+        <a href="https://cdmfinrep.bolt.host" title="CDM FinRep"><img src="logos/cdmfinrep.png" alt="CDM FinRep"></a>
+        <a href="https://cdmclearance.bolt.host" title="CDM Clearance"><img src="logos/cdmclearance.png" alt="CDM Clearance"></a>
+        <a href="https://cdmprep.bolt.host" title="CDM Prep"><img src="logos/cdmprep.png" alt="CDM Prep"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip"><div class="wrap">
+    <span><b>Pay your way:</b> card, bank transfer, Paystack, Moniepoint and OPay</span>
+    <span><b>Free trials</b> on our business products</span>
+    <span><b>Support</b> by phone and WhatsApp</span>
+  </div></div>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Our products</div>
+        <h2>One company, six tools</h2>
+        <p>Each product stands on its own. Start with the one you need today and add the others when you are ready.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="top"><img src="logos/cdm24.png" alt=""><div><h3>CDM ERP</h3><div class="kind">Sales, stock and accounts</div></div></div>
+          <p>Run sales, stock, staff and accounts for your business in one system, even offline.</p>
+          <ul><li>Pharmacies, supermarkets and shops</li><li>Hotels, restaurants and event centres</li><li>Point of sale, inventory and reports</li></ul>
+          <a class="go" href="https://cdm24.netlify.app">Start a 14-day free trial →</a>
+        </article>
+        <article class="card">
+          <div class="top"><img src="logos/cdmschool.png" alt=""><div><h3>CDM School</h3><div class="kind">School management</div></div></div>
+          <p>Attendance, results, report sheets and online fees for your school in one place.</p>
+          <ul><li>Nursery, primary and secondary</li><li>Parent app, messages and fee payments</li><li>Public school page and online admissions</li></ul>
+          <a class="go" href="https://cdmschool.bolt.host">Register your school →</a>
+        </article>
+        <article class="card">
+          <div class="top"><img src="logos/cdmpeople.png" alt=""><div><h3>CDM People</h3><div class="kind">HR and payroll</div></div></div>
+          <p>Run payroll in minutes: PAYE under the new 2026 tax rules, pension, NHF, payslips and bank schedules.</p>
+          <ul><li>Small, medium and large employers</li><li>Schools and accounting firms</li><li>Payslips and bank schedules ready to send</li></ul>
+          <a class="go" href="https://cdmpeople.bolt.host">Start a 14-day free trial →</a>
+        </article>
+        <article class="card">
+          <div class="top"><img src="logos/cdmfinrep.png" alt=""><div><h3>CDM FinRep</h3><div class="kind">Financial reporting</div></div></div>
+          <p>Turn your branches' daily figures into a trial balance, financial statements and a management report.</p>
+          <ul><li>Multi-branch businesses</li><li>Distributors and filling stations</li><li>Accounting firms</li></ul>
+          <a class="go" href="https://cdmfinrep.bolt.host">Start a 14-day free trial →</a>
+        </article>
+        <article class="card">
+          <div class="top"><img src="logos/cdmclearance.png" alt=""><div><h3>CDM Clearance</h3><div class="kind">E-invoicing</div></div></div>
+          <p>Get ready for NRS e-invoicing: invoices that pass the TIN, VAT and format checks, cleared through a certified provider when your turn comes.</p>
+          <ul><li>Manufacturers, distributors and wholesalers</li><li>Government contractors and suppliers</li><li>Professional and accounting firms</li></ul>
+          <a class="go" href="https://cdmclearance.bolt.host">Start a 14-day free trial →</a>
+        </article>
+        <article class="card">
+          <div class="top"><img src="logos/cdmprep.png" alt=""><div><h3>CDM Prep</h3><div class="kind">Professional exam prep</div></div></div>
+          <p>Practise for ICAN, ANAN, ACCA and CPA with topic questions, worked answers, case studies and timed mock exams.</p>
+          <ul><li>Individual students</li><li>Tuition centres and universities</li><li>Employers training their staff</li></ul>
+          <a class="go" href="https://cdmprep.bolt.host">Create a free account →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="why">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Why CDM</div>
+        <h2>Built for how Nigeria works</h2>
+        <p>Our products are designed around Nigerian rules, payment habits and internet conditions.</p>
+      </div>
+      <div class="grid">
+        <div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
+          <h3>Local rules built in</h3><p>Naira throughout, PAYE under the 2026 tax rules, pension and NHF, and NRS e-invoicing.</p></div>
+        <div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
+          <h3>Payments people use</h3><p>Customers, parents and students pay by card, transfer, Paystack, Moniepoint or OPay.</p></div>
+        <div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h3>Works on your phone</h3><p>No installation. Open in any browser, on a phone, tablet or computer.</p></div>
+        <div class="feat"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Secure by design</h3><p>Each organisation's data is kept separate, with role-based access and secure sign-in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners">
+    <div class="wrap">
+      <div class="partner">
+        <div>
+          <div class="eyebrow" style="color:#ffb35c">CDM Partners</div>
+          <h2>Know business owners or schools? <em>Earn while you sell.</em></h2>
+          <p>Join our remote sales team or become a reseller. Free online training and certification, your own hours, from your phone.</p>
+          <a class="btn btn-o" href="https://cdmpartners.bolt.host">Apply to become a partner</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>30%</b><span>commission on a new client's first payment</span></div>
+          <div class="stat"><b>15%</b><span>of every renewal, for as long as the client stays</span></div>
+          <div class="stat"><b>Resellers</b><span>Buy at a wholesale discount and sell at your own prices</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Contact</div>
+        <h2>Talk to us</h2>
+        <p>Questions, a demo, or help choosing the right product: we reply quickly.</p>
+      </div>
+      <div class="grid">
+        <a class="ct" href="tel:+2348064068800"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></div><h3>Call</h3><p>0806 406 8800</p></a>
+        <a class="ct" href="https://wa.me/2348064068800"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 01-13.5 7.8L3 21l1.2-4.5A9 9 0 1121 12z"/></svg></div><h3>WhatsApp</h3><p>Chat with us</p></a>
+        <a class="ct" href="mailto:cdmtech26@gmail.com"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><h3>Email</h3><p>cdmtech26@gmail.com</p></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr">2026</span> CDM Technologies · Abuja, Nigeria</div>
+    <div class="links">
+      <a href="https://cdm24.netlify.app">CDM ERP</a><a href="https://cdmschool.bolt.host">CDM School</a><a href="https://cdmpeople.bolt.host">CDM People</a>
+      <a href="https://cdmfinrep.bolt.host">CDM FinRep</a><a href="https://cdmclearance.bolt.host">CDM Clearance</a><a href="https://cdmprep.bolt.host">CDM Prep</a><a href="https://cdmpartners.bolt.host">CDM Partners</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear()</script>
+</body>
+</html>
