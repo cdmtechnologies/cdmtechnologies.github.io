@@ -1,5 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 64" role="img" aria-label="CDM Technologies">
-  <path d="M31 13.5 A 18.5 18.5 0 1 0 31 50.5" fill="none" stroke="#1662c4" stroke-width="9" stroke-linecap="round"/>
-  <path d="M41 13.5 h4 a18.5 18.5 0 0 1 0 37 h-4 Z" fill="none" stroke="#f28c1e" stroke-width="9" stroke-linejoin="round"/>
-  <circle cx="21" cy="32" r="3.6" fill="#0b2a55"/><circle cx="31" cy="32" r="3.6" fill="#0b2a55"/><circle cx="52" cy="32" r="3.6" fill="#0b2a55"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 4 300 166" role="img" aria-label="CDM Technologies">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a6fd0"/><stop offset="1" stop-color="#0b2a55"/></linearGradient>
+    <linearGradient id="o" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f7a13c"/><stop offset="1" stop-color="#ea6a12"/></linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4caf50"/><stop offset="1" stop-color="#1b7a3a"/></linearGradient>
+  </defs>
+  <!-- C -->
+  <path d="M116.8 58.2 A52 52 0 1 0 116.8 131.8" fill="none" stroke="url(#b)" stroke-width="22" stroke-linecap="round"/>
+  <!-- dots -->
+  <circle cx="66" cy="95" r="8.5" fill="#1662c4"/><circle cx="89" cy="95" r="8.5" fill="#1662c4"/><circle cx="112" cy="95" r="8.5" fill="#1662c4"/>
+  <!-- D -->
+  <path d="M138 43 h6 a52 52 0 0 1 0 104 h-6 Z" fill="none" stroke="url(#b)" stroke-width="22" stroke-linejoin="round"/>
+  <!-- green growth ring with bars -->
+  <path d="M240 46 A 54 54 0 1 1 204 150" fill="none" stroke="url(#g)" stroke-width="11" stroke-linecap="round"/>
+  <g fill="url(#g)"><rect x="220" y="104" width="10" height="26" rx="2"/><rect x="235" y="92" width="10" height="38" rx="2"/><rect x="250" y="78" width="10" height="52" rx="2"/></g>
+  <!-- orange rising arrow -->
+  <path d="M104 160 C 150 150, 190 120, 222 62" fill="none" stroke="url(#o)" stroke-width="15" stroke-linecap="round"/>
+  <path d="M206 58 L 236 34 L 238 72 Z" fill="#ea6a12" stroke="#ea6a12" stroke-width="4" stroke-linejoin="round"/>
+  <!-- graduation cap -->
+  <g transform="translate(150 28)">
+    <path d="M-26 0 L0 -12 L26 0 L0 12 Z" fill="#0b2a55"/>
+    <path d="M-15 5 v10 q15 9 30 0 v-10 l-15 7 z" fill="#1662c4"/>
+    <path d="M22 2 v14" stroke="#f28c1e" stroke-width="3" stroke-linecap="round"/><circle cx="22" cy="18" r="3.2" fill="#f28c1e"/>
+  </g>
 </svg>

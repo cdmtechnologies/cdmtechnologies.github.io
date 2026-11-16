@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://cdmtechnologies.github.io/img/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -63,7 +63,8 @@
   header.scrolled { border-color: var(--line); box-shadow: 0 6px 20px rgba(11, 42, 85, .06); }
   header .wrap { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; color: var(--navy); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
-  .brand img { width: 44px; height: 37px; }
+  .brand img { width: 82px; height: 45px; }
+  footer .brand img { background: #fff; border-radius: 12px; padding: 4px 6px; width: 84px; height: 48px; }
   .brand small { display: block; font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-top: -2px; }
   nav { display: flex; gap: 28px; align-items: center; font-weight: 500; font-size: 15px; }
   nav a { text-decoration: none; color: var(--muted); }
@@ -95,7 +96,14 @@
   .dash { display: grid; grid-template-columns: 120px 1fr; min-height: 330px; color: var(--ink); }
   .side { background: var(--navy); padding: 16px 12px; display: flex; flex-direction: column; gap: 8px; }
   .side .lg { display: flex; align-items: center; gap: 6px; color: #fff; font-weight: 800; font-size: 12px; margin-bottom: 8px; font-family: "Plus Jakarta Sans", sans-serif; }
-  .side .lg img { width: 24px; height: 20px; }
+  .side .lg { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .side .lg .chip { width: 44px; height: 44px; background: #fff; border-radius: 12px; display: grid; place-items: center; padding: 4px; }
+  .side .lg .chip img { width: 100%; height: 100%; object-fit: contain; }
+  .main > * { transition: opacity .35s; }
+  .main.swap > * { opacity: 0; }
+  .mtabs { display: flex; justify-content: center; gap: 8px; margin-top: 30px; flex-wrap: wrap; }
+  .mtabs button { font: 600 13.5px Inter, sans-serif; color: rgba(255,255,255,.8); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); padding: 7px 14px; border-radius: 999px; cursor: pointer; }
+  .mtabs button[aria-pressed="true"] { background: #fff; color: var(--navy); border-color: #fff; }
   .side span { height: 9px; border-radius: 5px; background: rgba(255,255,255,.18); }
   .side span.on { background: var(--orange); width: 80%; }
   .main { padding: 16px; background: #f7f9fc; }
@@ -103,7 +111,7 @@
   .kpi { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
   .kpi small { font-size: 10.5px; color: var(--muted); font-weight: 600; display: block; }
   .kpi b { font-size: 18px; font-family: "Plus Jakarta Sans", sans-serif; }
-  .kpi em { font-style: normal; font-size: 10.5px; color: #16a34a; font-weight: 700; }
+  .kpi em { margin-left: 5px; font-style: normal; font-size: 10.5px; color: #16a34a; font-weight: 700; }
   .chart { margin-top: 10px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
   .chart small { font-size: 11px; font-weight: 700; color: var(--navy); }
   .bars { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin-top: 10px; }
@@ -246,6 +254,11 @@
     .strip .logos img { height: 38px; }
     .float { font-size: 12px; padding: 10px 12px; }
     .stat b { min-width: 64px; font-size: 26px; }
+    .brand { font-size: 16px; gap: 8px; } .brand img { width: 58px; height: 32px; } .brand small { display: none; }
+    nav .btn { padding: 9px 14px; font-size: 13.5px; }
+    .mtabs { margin-top: 28px; }
+    .f1 { bottom: 64px; }
+    .kpi em { display: block; margin-left: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -256,7 +269,7 @@
 <body>
 <header id="hdr">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="CDM Technologies home"><img src="img/logo.svg" alt="" width="44" height="37"><span>CDM Technologies<small>Cloud software</small></span></a>
+    <a class="brand" href="#top" aria-label="CDM Technologies home"><img src="img/logo.svg" alt="" width="82" height="45"><span>CDM Technologies<small>Cloud software</small></span></a>
     <nav aria-label="Main">
       <a href="#products">Products</a><a href="#how">How it works</a><a href="#why">Why CDM</a><a href="#partners">Partners</a><a href="#faq">FAQ</a>
       <a class="btn btn-o" href="#contact">Talk to us</a>
@@ -282,26 +295,21 @@
         </div>
       </div>
 
-      <div class="visual" aria-hidden="true">
-        <div class="browser">
-          <div class="bar"><i></i><i></i><i></i><div class="url">app.cdm · Dashboard</div></div>
+      <div class="visual">
+        <div class="browser" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i><div class="url" id="mUrl">cdm24.netlify.app · Dashboard</div></div>
           <div class="dash">
-            <div class="side"><div class="lg"><img src="img/logo.svg" alt="">CDM</div><span class="on"></span><span></span><span style="width:70%"></span><span></span><span style="width:60%"></span><span></span></div>
-            <div class="main">
-              <div class="kpis">
-                <div class="kpi"><small>Sales today</small><b>2,486</b><em>▲ 12%</em></div>
-                <div class="kpi"><small>Stock items</small><b>1,204</b><em>▲ 4%</em></div>
-                <div class="kpi"><small>Fees paid</small><b>87%</b><em>▲ 9%</em></div>
-              </div>
-              <div class="chart"><small>Revenue this week</small>
-                <div class="bars"><i style="height:42%"></i><i style="height:58%;animation-delay:.08s"></i><i style="height:50%;animation-delay:.16s"></i><i style="height:72%;animation-delay:.24s"></i><i style="height:64%;animation-delay:.32s"></i><i style="height:88%;animation-delay:.4s"></i><i style="height:78%;animation-delay:.48s"></i></div>
-              </div>
+            <div class="side"><div class="lg"><div class="chip"><img id="mLogo" src="img/cdm24.webp" alt=""></div><div id="mName">CDM ERP</div></div><span class="on"></span><span></span><span style="width:70%"></span><span></span><span style="width:60%"></span><span></span></div>
+            <div class="main" id="mMain">
+              <div class="kpis" id="mKpis"></div>
+              <div class="chart"><small id="mChart">Revenue this week</small><div class="bars" id="mBars"></div></div>
               <div class="rows"><div><i></i><span></span><b></b></div><div><i></i><span></span><b></b></div></div>
             </div>
           </div>
         </div>
-        <div class="float f2"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div><div><b>Report sheets ready</b><span>JSS 2 · 32 students</span></div></div>
-        <div class="float f1"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><div><b>Payment received</b><span>Card · just now</span></div></div>
+        <div class="float f2" aria-hidden="true"><div class="ic" id="mF2i"></div><div><b id="mF2b"></b><span id="mF2s"></span></div></div>
+        <div class="float f1" aria-hidden="true"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><div><b>Payment received</b><span id="mF1s">Card · just now</span></div></div>
+        <div class="mtabs" role="group" aria-label="Preview a product"><button type="button" data-i="0" aria-pressed="true">CDM ERP</button><button type="button" data-i="1" aria-pressed="false">CDM School</button><button type="button" data-i="2" aria-pressed="false">CDM Prep</button></div>
       </div>
     </div>
   </div>
@@ -470,7 +478,7 @@
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="brand" href="#top"><img src="img/logo.svg" alt="" width="44" height="37"><span>CDM Technologies</span></a>
+        <a class="brand" href="#top"><img src="img/logo.svg" alt="" width="82" height="45"><span>CDM Technologies</span></a>
         <p style="max-width:340px">Cloud software for business, schools, finance and professional exams. Headquartered in Abuja, Nigeria, serving customers worldwide.</p>
       </div>
       <div><h4>Products</h4><ul>
@@ -499,6 +507,41 @@
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
     els.forEach((el) => io.observe(el));
   } else els.forEach((el) => el.classList.add('in'));
+  // hero preview: one real product at a time
+  const M = [
+    { url: 'cdm24.netlify.app', logo: 'img/cdm24.webp', name: 'CDM ERP', chart: 'Revenue this week',
+      k: [['Sales today', '2,486', '▲ 12%'], ['Items in stock', '1,204', '▲ 4%'], ['Low stock', '7', 'reorder']], bars: [42, 58, 50, 72, 64, 88, 78],
+      f2: ['Low stock alert', 'Paracetamol · 12 left', '#fff1e0', '#f28c1e'], f1: 'Card · just now' },
+    { url: 'cdmschool.bolt.host', logo: 'img/cdmschool.webp', name: 'CDM School', chart: 'Attendance by class',
+      k: [['Students', '412', '▲ 18'], ['Present today', '96%', '▲ 2%'], ['Fees paid', '87%', '▲ 9%']], bars: [92, 88, 97, 85, 94, 90, 96],
+      f2: ['Report sheets ready', 'JSS 2 · 32 students', '#e9f1fd', '#1662c4'], f1: 'School fees · just now' },
+    { url: 'cdmprep.bolt.host', logo: 'img/cdmprep.webp', name: 'CDM Prep', chart: 'Mock exam scores',
+      k: [['Questions done', '1,240', '▲ 86'], ['Average score', '72%', '▲ 6%'], ['Study streak', '12 days', 'keep going']], bars: [48, 55, 52, 61, 66, 70, 78],
+      f2: ['Mock exam marked', 'Financial Reporting · 74%', '#e7f6ec', '#15803d'], f1: 'Subscription · just now' }
+  ];
+  const doc = (id) => document.getElementById(id);
+  const ic = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>';
+  const mtabs = document.querySelectorAll('.mtabs button');
+  let mi = 0, timer = null;
+  function showM(i, animate = true) {
+    mi = i; const m = M[i];
+    const paint = () => {
+      doc('mUrl').textContent = m.url + ' · Dashboard'; doc('mLogo').src = m.logo; doc('mName').textContent = m.name; doc('mChart').textContent = m.chart;
+      doc('mKpis').innerHTML = m.k.map(([a, b, c]) => `<div class="kpi"><small>${a}</small><b>${b}</b><em>${c}</em></div>`).join('');
+      doc('mBars').innerHTML = m.bars.map((h, j) => `<i style="height:${h}%;animation-delay:${j * 0.07}s"></i>`).join('');
+      doc('mF2b').textContent = m.f2[0]; doc('mF2s').textContent = m.f2[1];
+      Object.assign(doc('mF2i').style, { background: m.f2[2], color: m.f2[3] }); doc('mF2i').innerHTML = ic; doc('mF1s').textContent = m.f1;
+      doc('mMain').classList.remove('swap');
+    };
+    mtabs.forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.i === i)));
+    if (animate) { doc('mMain').classList.add('swap'); setTimeout(paint, 300); } else paint();
+  }
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const start = () => { if (!still) { clearInterval(timer); timer = setInterval(() => showM((mi + 1) % M.length), 5000); } };
+  mtabs.forEach((b) => b.addEventListener('click', () => { showM(+b.dataset.i); start(); }));
+  document.querySelector('.visual').addEventListener('mouseenter', () => clearInterval(timer));
+  document.querySelector('.visual').addEventListener('mouseleave', start);
+  showM(0, false); start();
 </script>
 </body>
 </html>
