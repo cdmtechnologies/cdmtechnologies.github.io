@@ -123,6 +123,120 @@
   .rows div i { width: 14px; height: 14px; border-radius: 4px; background: var(--sky); }
   .rows div span { height: 7px; border-radius: 4px; background: #e6ebf2; flex: 1; }
   .rows div b { width: 40px; height: 7px; border-radius: 4px; background: #c9f0d6; }
+  /* product screens: designed at 860x540, scaled to fit the browser frame */
+  .stage { position: relative; aspect-ratio: 860 / 540; overflow: hidden; background: #f4f6f9; }
+  .scr { position: absolute; left: 0; top: 0; width: 860px; height: 540px; transform: scale(var(--s, .6)); transform-origin: top left; opacity: 0; transition: opacity .45s; font: 13px/1.4 Inter, system-ui, sans-serif; color: #0f172a; overflow: hidden; }
+  .scr.on { opacity: 1; }
+  .scr h4 { font: 700 21px Inter, sans-serif; letter-spacing: -.01em; }
+  .scr h5 { font: 600 14px Inter, sans-serif; margin-bottom: 2px; }
+  .scr p, .scr .sub { color: #64748b; font-size: 12px; }
+  .scr .sp { flex: 1; }
+  .scr .tb { height: 44px; display: flex; align-items: center; gap: 10px; padding: 0 16px; background: #fff; border-bottom: 1px solid #e5e9f0; font-size: 12px; }
+  .scr .hm { width: 16px; height: 11px; border-top: 2px solid #334155; border-bottom: 2px solid #334155; position: relative; }
+  .scr .hm::after { content: ''; position: absolute; left: 0; right: 0; top: 2.5px; border-top: 2px solid #334155; }
+  .scr .pb { border: 1px solid #e2e8f0; border-radius: 7px; padding: 4px 10px; background: #f8fafc; font-size: 11.5px; }
+  .scr .k { background: #fff; border: 1px solid #e5e9f0; border-radius: 10px; padding: 12px 14px; position: relative; }
+  .scr .k small { display: block; color: #64748b; font-size: 11.5px; }
+  .scr .k b { display: block; font: 700 21px Inter, sans-serif; margin: 3px 0 2px; letter-spacing: -.01em; }
+  .scr .k i { font-style: normal; color: #94a3b8; font-size: 10.5px; }
+  .scr .lay { display: grid; grid-template-columns: 170px 1fr; height: 100%; }
+  .scr .nav { background: #fff; border-right: 1px solid #e5e9f0; padding: 14px 10px; display: flex; flex-direction: column; gap: 2px; font-size: 12px; }
+  .scr .nav > b { font-size: 14px; padding: 2px 8px 12px; }
+  .scr .nav a { padding: 6px 8px; border-radius: 6px; color: #334155; }
+  .scr .nav small { font-size: 9.5px; letter-spacing: .08em; color: #64748b; padding: 8px 8px 2px; font-weight: 600; }
+  .scr .bd { padding: 16px 18px; }
+  .scr .card2 { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12px; margin-top: 12px; }
+  .scr .card2 > div { background: #fff; border: 1px solid #e5e9f0; border-radius: 10px; padding: 14px; }
+  .scr .ring { --p: 80; --rc: #f59e0b; width: 104px; height: 104px; border-radius: 50%; margin: 12px auto 8px; display: grid; place-items: center; background: conic-gradient(var(--rc) calc(var(--p) * 1%), #edf1f6 0); position: relative; }
+  .scr .ring::before { content: ''; position: absolute; inset: 11px; border-radius: 50%; background: #fff; }
+  .scr .ring b { position: relative; font: 700 22px Inter, sans-serif; }
+  .scr p.c { text-align: center; }
+  .scr .btnb { background: #1d4f91; color: #fff; border-radius: 7px; padding: 7px 12px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .scr .tbl { background: #fff; border: 1px solid #e5e9f0; border-radius: 10px; margin-top: 12px; overflow: hidden; }
+  .scr .tbl h5 { padding: 12px 14px 6px; }
+  .scr .tr { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; padding: 9px 14px; border-top: 1px solid #eef1f5; font-size: 12px; }
+  .scr .tr.th { color: #64748b; font-weight: 600; font-size: 11px; background: #f8fafc; }
+
+  /* ERP */
+  .s-erp { background: #f8fafb; }
+  .s-erp .pillw { border: 1px solid #e2e8f0; border-radius: 999px; padding: 4px 12px; background: #f8fafc; }
+  .s-erp .pillw em { font-style: normal; font-size: 9px; font-weight: 700; background: #e2e8f0; border-radius: 999px; padding: 1px 6px; margin-left: 4px; }
+  .s-erp .wel { background: linear-gradient(90deg, #e3f1ee, #f5f8fa); border: 1px solid #dde7ea; border-radius: 12px; padding: 12px 16px; }
+  .s-erp .wel small { color: #0f766e; font-size: 11px; font-weight: 600; }
+  .s-erp .cols { display: grid; grid-template-columns: 1fr 1.15fr; gap: 12px; margin-top: 12px; }
+  .s-erp .exp { background: #fff1f2; border: 1px solid #fecdd3; border-radius: 12px; padding: 10px 12px; }
+  .s-erp .exp h5 { color: #9f1239; } .s-erp .exp p { color: #be123c; font-size: 10.5px; margin-bottom: 4px; }
+  .s-erp .er { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-top: 1px solid #fde4e7; font-size: 11.5px; }
+  .s-erp .er i { color: #94a3b8; font-style: normal; font-size: 10px; } .s-erp .er small { color: #64748b; font-size: 10px; }
+  .s-erp .er em { font-style: normal; background: #ffe4e6; color: #be123c; border-radius: 999px; padding: 2px 8px; font-size: 10px; font-weight: 600; }
+  .s-erp .loc { background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 10px 12px; margin-top: 10px; }
+  .s-erp .lr { display: flex; justify-content: space-between; font-size: 11.5px; margin-top: 6px; } .s-erp .lr b { color: #0f766e; }
+  .s-erp .lb { height: 6px; border-radius: 4px; background: #eef2f5; margin-top: 3px; } .s-erp .lb i { display: block; height: 100%; border-radius: 4px; background: #0f9b8e; }
+  .s-erp .kg { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: start; }
+  .s-erp .k { border-left: 3px solid var(--c); padding: 11px 12px; }
+  .s-erp .k b { font-size: 18px; }
+
+  /* School */
+  .s-sch .tb { background: #0f2b46; color: #fff; border: 0; }
+  .s-sch .tb .pb { background: transparent; border-color: rgba(255,255,255,.5); color: #fff; }
+  .s-sch .lay { height: calc(100% - 44px); }
+  .s-sch .nav a.on { background: #0f2b46; color: #fff; }
+  .s-sch .bd { padding: 12px 14px; }
+  .s-sch .ban { height: 70px; border-radius: 10px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; color: #fff;
+    background: linear-gradient(100deg, rgba(15,43,70,.92), rgba(29,79,145,.75)), repeating-linear-gradient(45deg, #2c6bb5 0 10px, #24589a 10px 20px); }
+  .s-sch .ban p { color: rgba(255,255,255,.8); }
+  .s-sch .logo-s { width: 44px; height: 44px; border-radius: 10px; background: #fff; color: #0f2b46; display: grid; place-items: center; font-weight: 800; }
+  .s-sch .qa { display: flex; gap: 6px; margin: 10px 0; font-size: 11.5px; } .s-sch .qa span { border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px 10px; background: #fff; } .s-sch .qa .dk { background: #0f2b46; color: #fff; border-color: #0f2b46; }
+  .s-sch .kg4, .s-fin .kg4, .s-prep .kg4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .s-sch .k { border-left: 4px solid var(--c); border-radius: 6px; }
+  .s-sch .card2 { margin-top: 10px; }
+  .s-sch .vb { display: flex; gap: 7px; align-items: flex-end; height: 104px; margin-top: 10px; } .s-sch .vb i { flex: 1; background: #3b82f6; border-radius: 4px 4px 0 0; }
+  .s-sch .ring { width: 86px; height: 86px; margin: 6px auto; --rc: #14b8a6; }
+
+  /* FinRep */
+  .s-fin .lay { grid-template-columns: 150px 1fr; }
+  .s-fin .nav { background: #0f172a; border: 0; color: #cbd5e1; } .s-fin .nav > b { color: #fff; } .s-fin .nav a { color: #cbd5e1; } .s-fin .nav a.on { background: #1e293b; color: #fff; }
+  .s-fin .bd { background: #f8fafc; }
+  .s-fin .kg4 { margin-top: 12px; }
+  .s-fin .k { border-radius: 12px; }
+  .s-fin .k .ic { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; color: #fff; font-style: normal; font-size: 14px; margin-bottom: 8px; }
+  .s-fin .k small { font-size: 10px; letter-spacing: .04em; } .s-fin .k b { font-size: 16.5px; } .s-fin .k em { font-style: normal; font-size: 10px; color: #94a3b8; }
+  .s-fin .ln { width: 100%; height: 130px; margin-top: 6px; }
+  .s-fin .dn { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+  .s-fin .donut { width: 104px; height: 104px; border-radius: 50%; flex: none; display: grid; place-items: center; position: relative; background: conic-gradient(#ef4444 0 62.4%, #f59e0b 0 87.2%, #8b5cf6 0 91.3%, #6366f1 0); }
+  .s-fin .donut::before { content: ''; position: absolute; inset: 18px; border-radius: 50%; background: #fff; }
+  .s-fin .donut b { position: relative; text-align: center; font-size: 13px; line-height: 1.1; } .s-fin .donut small { font-size: 8px; color: #94a3b8; }
+  .s-fin ul { list-style: none; flex: 1; font-size: 11px; display: grid; gap: 5px; } .s-fin li { display: flex; align-items: center; gap: 6px; } .s-fin li i { width: 9px; height: 9px; border-radius: 2px; } .s-fin li em { margin-left: auto; font-style: normal; }
+
+  /* Prep */
+  .s-prep { background: #f8fafc; } .s-prep .tb b { color: #0f172a; }
+  .s-prep .hd { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .s-prep .date { font-size: 11px; color: #64748b; }
+  .s-prep .k .ic { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; font-style: normal; font-size: 14px; margin-bottom: 8px; }
+  .s-prep .k b { font-size: 20px; } .s-prep .k small { font-size: 11px; }
+  .s-prep h5 em { float: right; font-style: normal; color: #0284c7; font-weight: 500; font-size: 11.5px; }
+  .s-prep .eb { display: flex; gap: 10px; align-items: center; background: #f8fafc; border-radius: 8px; padding: 7px 10px; margin-top: 7px; font-size: 11.5px; }
+  .s-prep .eb i { width: 34px; height: 30px; border-radius: 7px; background: #0284c7; color: #fff; font: 700 9px Inter, sans-serif; font-style: normal; display: grid; place-items: center; flex: none; }
+  .s-prep .eb small { display: block; color: #64748b; font-size: 10px; }
+  .s-prep .ring { width: 92px; height: 92px; margin: 10px auto 6px; }
+  .s-prep .btnb { display: block; text-align: center; margin-top: 10px; background: #0284c7; }
+
+  /* People */
+  .s-ppl .lay, .s-clr .lay { grid-template-columns: 160px 1fr; }
+  .s-ppl .nav a.on, .s-clr .nav a.on { background: #e8f0fb; color: #1d4f91; }
+  .s-ppl .bd, .s-clr .bd { background: #f3f5f6; }
+  .s-ppl .kg3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+  .s-ppl .k b { font-size: 18px; } .s-ppl .k i { color: #64748b; }
+  .s-ppl .acts { display: flex; gap: 8px; margin-top: 12px; font-size: 12px; } .s-ppl .acts span { background: #fff; border: 1px solid #d5dbe3; border-radius: 6px; padding: 6px 12px; } .s-ppl .acts .dk { background: #1d4f91; color: #fff; border-color: #1d4f91; }
+
+  /* Clearance */
+  .s-clr .hd { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .s-clr .flt { display: flex; gap: 8px; margin-top: 12px; font-size: 11.5px; color: #94a3b8; } .s-clr .flt span { background: #fff; border: 1px solid #d5dbe3; border-radius: 6px; padding: 6px 10px; } .s-clr .flt span:first-child { flex: .6; }
+  .s-clr .tr { grid-template-columns: .8fr 1.3fr 1fr .9fr 1.1fr; padding: 11px 14px; }
+  .s-clr .tr em { font-style: normal; font-size: 10.5px; font-weight: 600; border-radius: 999px; padding: 2px 9px; }
+  .s-clr .ok { background: #dcfce7; color: #15803d; } .s-clr .vl { background: #dbeafe; color: #1d4ed8; } .s-clr .bad { background: #fee2e2; color: #b91c1c; } .s-clr .dr { background: #f1f5f9; color: #475569; }
+  .demo-note { text-align: center; font-size: 12.5px; color: rgba(255,255,255,.6); margin-top: 10px; }
+  .browser .demo { font-size: 10.5px; font-weight: 700; color: #b45309; background: #fff1e0; border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
   .float { position: absolute; background: #fff; color: var(--ink); border-radius: 16px; padding: 12px 14px; box-shadow: 0 18px 40px rgba(2, 10, 30, .35); display: flex; gap: 12px; align-items: center; font-size: 13px; animation: bob 6s ease-in-out infinite; }
   .float .ic { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; flex: none; }
   .float b { display: block; font-size: 14px; font-family: "Plus Jakarta Sans", sans-serif; }
@@ -257,7 +371,7 @@
     .brand { font-size: 16px; gap: 8px; } .brand img { width: 58px; height: 32px; } .brand small { display: none; }
     nav .btn { padding: 9px 14px; font-size: 13.5px; }
     .mtabs { margin-top: 28px; }
-    .f1 { bottom: 64px; }
+    .f1 { display: none; }
     .kpi em { display: block; margin-left: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -297,19 +411,150 @@
 
       <div class="visual">
         <div class="browser" aria-hidden="true">
-          <div class="bar"><i></i><i></i><i></i><div class="url" id="mUrl">cdm24.netlify.app · Dashboard</div></div>
-          <div class="dash">
-            <div class="side"><div class="lg"><div class="chip"><img id="mLogo" src="img/cdm24.webp" alt=""></div><div id="mName">CDM ERP</div></div><span class="on"></span><span></span><span style="width:70%"></span><span></span><span style="width:60%"></span><span></span></div>
-            <div class="main" id="mMain">
-              <div class="kpis" id="mKpis"></div>
-              <div class="chart"><small id="mChart">Revenue this week</small><div class="bars" id="mBars"></div></div>
-              <div class="rows"><div><i></i><span></span><b></b></div><div><i></i><span></span><b></b></div></div>
+          <div class="bar"><i></i><i></i><i></i><div class="url" id="mUrl">cdm24.netlify.app</div></div>
+          <div class="stage" id="stage">
+            <!-- CDM ERP -->
+            <div class="scr s-erp on" data-k="0">
+              <div class="tb"><span class="hm"></span><span class="pillw">Welcome, Ada Okoro <em>ADMIN</em></span><span class="sp"></span><span class="pb">Help</span><span class="pb">Sync</span></div>
+              <div class="bd">
+                <div class="wel"><small>✓ Authorized Access Role: ADMIN</small><h4>Welcome back, Ada!</h4><p>Business overview for <b>SUNRISE PHARMACY</b>. Filter data by branch or date below.</p></div>
+                <div class="cols">
+                  <div>
+                    <div class="exp"><h5>2 short-dated batches</h5><p>Expiring within 90 days. Sell these first or return them to the supplier.</p>
+                      <div class="er"><span>Vitamin C 1000mg <i>· Wuse Branch</i><br><small>24 in stock, expires 2027-01-08</small></span><em>53 days</em></div>
+                      <div class="er"><span>Cough Syrup 100ml <i>· Head Office</i><br><small>12 in stock, expires 2027-01-20</small></span><em>65 days</em></div>
+                    </div>
+                    <div class="loc"><h5>Location Performance</h5>
+                      <div class="lr"><span>Head Office</span><b>₦2,184,300</b></div><div class="lb"><i style="width:88%"></i></div>
+                      <div class="lr"><span>Wuse Branch</span><b>₦1,512,700</b></div><div class="lb"><i style="width:61%"></i></div>
+                      <div class="lr"><span>Garki Branch</span><b>₦1,165,500</b></div><div class="lb"><i style="width:47%"></i></div>
+                    </div>
+                  </div>
+                  <div class="kg">
+                    <div class="k" style="--c:#0f9b8e"><small>Total Sales Volume</small><b>₦4,862,500</b><i>318 total orders recorded</i></div>
+                    <div class="k" style="--c:#6366f1"><small>Total Payments Received</small><b>₦4,710,000</b><i>Cash &amp; digital collections</i></div>
+                    <div class="k" style="--c:#a855f7"><small>Active Customers</small><b>264</b><i>Unique customer profiles</i></div>
+                    <div class="k" style="--c:#f59e0b"><small>Customer Receivables</small><b style="color:#d97706">₦152,500</b><i>Pending balances to collect</i></div>
+                    <div class="k" style="--c:#ef4444"><small>Vendor Payables</small><b style="color:#dc2626">₦390,000</b><i>Unpaid purchase orders</i></div>
+                    <div class="k" style="--c:#3b82f6"><small>Average Order Value</small><b>₦15,290</b><i>Per transaction average</i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CDM School -->
+            <div class="scr s-sch" data-k="1">
+              <div class="tb"><b>cdmschool</b><span class="sp"></span><span>GREENFIELD ACADEMY (school admin)</span><span class="pb">Help</span><span class="pb">Sign out</span></div>
+              <div class="lay">
+                <div class="nav"><small>OVERVIEW</small><a class="on">Dashboard</a><a>Setup guide</a><a>Announcements</a><a>Calendar</a><a>Messages</a><small>STUDENTS AND PEOPLE</small><small>TEACHING AND LEARNING</small><small>MONEY</small><a>Fees</a><a>Receipts</a><small>SCHOOL</small><a>School page</a><a>Billing</a></div>
+                <div class="bd">
+                  <div class="ban"><div><h4>GREENFIELD ACADEMY</h4><p>Welcome, Mrs Bello (school admin)</p></div><span class="logo-s">GA</span></div>
+                  <div class="qa"><span class="dk">Take attendance</span><span>Enter scores</span><span>Post announcement</span><span>Collect fees</span></div>
+                  <div class="kg4">
+                    <div class="k" style="--c:#e0a32e"><small>Students</small><b>412</b><i>of 500 places paid for</i></div>
+                    <div class="k" style="--c:#14b8a6"><small>Staff</small><b>28</b></div>
+                    <div class="k" style="--c:#3b82f6"><small>Classes</small><b>18</b></div>
+                    <div class="k" style="--c:#ef6c3a"><small>Attendance</small><b>96%</b><i>marked today</i></div>
+                  </div>
+                  <div class="card2"><div><h5>Attendance, last two weeks</h5><p>Share of pupils present or late each day</p>
+                    <div class="vb"><i style="height:92%"></i><i style="height:95%"></i><i style="height:94%"></i><i style="height:97%"></i><i style="height:90%"></i><i style="height:93%"></i><i style="height:96%"></i><i style="height:98%"></i><i style="height:95%"></i><i style="height:96%"></i></div></div>
+                    <div><h5>School fees this term</h5><p>First term, 2026</p><div class="ring" style="--p:87"><b>87%</b></div><p class="c">₦31.4M of ₦36.1M paid</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CDM FinRep -->
+            <div class="scr s-fin" data-k="2">
+              <div class="lay">
+                <div class="nav"><b>CDM FinRep</b><a class="on">Dashboard</a><a>Trial balance</a><a>Statements</a><a>Notes</a><a>Branches</a><a>Ratios</a><a>Management report</a></div>
+                <div class="bd">
+                  <h4>Dashboard</h4><p class="sub">Financial overview for Apex Distributors Ltd · FY2026</p>
+                  <div class="kg4">
+                    <div class="k"><i class="ic" style="background:#14b8a6">$</i><small>TOTAL REVENUE</small><b>₦184,600,000</b><em>FY2026</em></div>
+                    <div class="k"><i class="ic" style="background:#22c55e">↗</i><small>NET PROFIT</small><b>₦21,300,000</b><em>11.5% margin</em></div>
+                    <div class="k"><i class="ic" style="background:#3b82f6">▣</i><small>TOTAL ASSETS</small><b>₦96,200,000</b><em>FY2026</em></div>
+                    <div class="k"><i class="ic" style="background:#64748b">◉</i><small>TOTAL EQUITY</small><b>₦58,700,000</b><em>FY2026</em></div>
+                  </div>
+                  <div class="card2">
+                    <div><h5>Profit trend</h5><p>FY2022 to FY2026</p>
+                      <svg viewBox="0 0 300 110" class="ln"><path d="M0 100 H300 M0 70 H300 M0 40 H300 M0 10 H300" stroke="#eef2f7"/><polyline points="10,92 80,78 150,64 220,40 290,22" fill="none" stroke="#0f9b8e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><g fill="#0f9b8e"><circle cx="10" cy="92" r="4.5"/><circle cx="80" cy="78" r="4.5"/><circle cx="150" cy="64" r="4.5"/><circle cx="220" cy="40" r="4.5"/><circle cx="290" cy="22" r="4.5"/></g></svg></div>
+                    <div><h5>Expense breakdown</h5><p>By category</p>
+                      <div class="dn"><div class="donut"><b>163M<br><small>NGN</small></b></div><ul><li><i style="background:#ef4444"></i>Cost of sales<em>62.4%</em></li><li><i style="background:#f59e0b"></i>Operating exp.<em>24.8%</em></li><li><i style="background:#8b5cf6"></i>Other<em>4.1%</em></li><li><i style="background:#6366f1"></i>Tax<em>8.7%</em></li></ul></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CDM Prep -->
+            <div class="scr s-prep" data-k="3">
+              <div class="tb"><span class="hm"></span><span class="sp"></span><b>▣ cdmprep</b><span class="sp"></span></div>
+              <div class="bd">
+                <div class="hd"><div><h4>Welcome back, Chidinma</h4><p>Track your progress and continue your exam prep journey</p></div><span class="date">Monday, 16 November</span></div>
+                <div class="kg4">
+                  <div class="k"><i class="ic" style="color:#0284c7;background:#e0f2fe">▤</i><b>1,240</b><small>Questions practised</small></div>
+                  <div class="k"><i class="ic" style="color:#ea580c;background:#ffedd5">▥</i><b>18</b><small>Mock exams taken</small></div>
+                  <div class="k"><i class="ic" style="color:#16a34a;background:#dcfce7">◎</i><b>76%</b><small>Avg. mastery</small></div>
+                  <div class="k"><i class="ic" style="color:#d97706;background:#fef3c7">✪</i><b>72%</b><small>Accuracy rate</small></div>
+                </div>
+                <div class="card2">
+                  <div><h5>Exam bodies <em>Start practising</em></h5>
+                    <div class="eb"><i>ACCA</i><span>Association of Chartered Certified Accountants<small>3 levels · 15 subjects</small></span></div>
+                    <div class="eb"><i>CPA</i><span>Certified Public Accountant<small>2 levels · 6 subjects</small></span></div>
+                    <div class="eb"><i>ICAN</i><span>Institute of Chartered Accountants of Nigeria<small>3 levels · 15 subjects</small></span></div>
+                    <div class="eb"><i>ANAN</i><span>Association of National Accountants of Nigeria<small>4 levels · 24 subjects</small></span></div></div>
+                  <div><h5>Latest mock exam result</h5><div class="ring" style="--p:78;--rc:#0ea5e9"><b>78%</b></div><p class="c"><b>39 / 50 correct</b><br>Financial Reporting · 1h 42m</p><span class="btnb">New mock exam</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CDM People -->
+            <div class="scr s-ppl" data-k="4">
+              <div class="lay">
+                <div class="nav"><b>CDM People</b><a class="on">Overview</a><a>Employees</a><a>Payroll</a><a>Leave</a><a>Recruitment</a><a>Performance</a><a>Approvals</a><a>My payslips</a><a>Company</a></div>
+                <div class="bd">
+                  <h4>BRIGHTWAY LOGISTICS LTD</h4><p class="sub">Overview</p>
+                  <div class="kg3">
+                    <div class="k"><small>Active employees</small><b>48</b></div>
+                    <div class="k"><small>Latest payroll</small><b>November 2026</b><i>Approved</i></div>
+                    <div class="k"><small>Net pay (latest approved)</small><b>₦12,846,300.00</b></div>
+                  </div>
+                  <div class="acts"><span>Add employee</span><span>Employees</span><span class="dk">Run payroll</span></div>
+                  <div class="tbl"><h5>Payroll · November 2026</h5>
+                    <div class="tr th"><span>Employee</span><span>Gross</span><span>PAYE</span><span>Pension</span><span>Net pay</span></div>
+                    <div class="tr"><span>Adaeze Nwosu</span><span>₦450,000</span><span>₦52,180</span><span>₦36,000</span><span>₦357,320</span></div>
+                    <div class="tr"><span>Ibrahim Musa</span><span>₦320,000</span><span>₦31,560</span><span>₦25,600</span><span>₦258,840</span></div>
+                    <div class="tr"><span>Grace Etim</span><span>₦275,000</span><span>₦24,420</span><span>₦22,000</span><span>₦225,830</span></div>
+                    <div class="tr"><span>Tunde Bakare</span><span>₦210,000</span><span>₦14,890</span><span>₦16,800</span><span>₦176,210</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CDM Clearance -->
+            <div class="scr s-clr" data-k="5">
+              <div class="lay">
+                <div class="nav"><b>CDM Clearance</b><a class="on">Invoices</a><a>Customers</a><a>E-invoicing</a><a>Business</a><a>Team access</a><a>Billing</a></div>
+                <div class="bd">
+                  <div class="hd"><div><h4>Invoices</h4><p class="sub">Every invoice is checked against the Nigerian e-invoicing rules before it goes out.</p></div><span class="btnb">+ New invoice</span></div>
+                  <div class="flt"><span>Search number, customer or IRN</span><span>All statuses ▾</span></div>
+                  <div class="tbl">
+                    <div class="tr th"><span>Invoice</span><span>Customer</span><span>Amount</span><span>Status</span><span>IRN</span></div>
+                    <div class="tr"><span>INV-0142</span><span>Delta Foods Ltd</span><span>₦2,450,000</span><span><em class="ok">Cleared</em></span><span>NG-7F3A…91C2</span></div>
+                    <div class="tr"><span>INV-0141</span><span>Kano Agro Mills</span><span>₦860,500</span><span><em class="ok">Cleared</em></span><span>NG-2B8D…44E0</span></div>
+                    <div class="tr"><span>INV-0140</span><span>Lekki Builders</span><span>₦1,275,000</span><span><em class="vl">Validated</em></span><span>Queued</span></div>
+                    <div class="tr"><span>INV-0139</span><span>Prime Medics</span><span>₦318,000</span><span><em class="bad">Fix TIN</em></span><span>-</span></div>
+                    <div class="tr"><span>INV-0138</span><span>Abuja Hotels Co</span><span>₦640,200</span><span><em class="dr">Draft</em></span><span>-</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="float f2" aria-hidden="true"><div class="ic" id="mF2i"></div><div><b id="mF2b"></b><span id="mF2s"></span></div></div>
         <div class="float f1" aria-hidden="true"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><div><b>Payment received</b><span id="mF1s">Card · just now</span></div></div>
-        <div class="mtabs" role="group" aria-label="Preview a product"><button type="button" data-i="0" aria-pressed="true">CDM ERP</button><button type="button" data-i="1" aria-pressed="false">CDM School</button><button type="button" data-i="2" aria-pressed="false">CDM Prep</button></div>
+        <div class="mtabs" role="group" aria-label="Preview a product"><button type="button" data-i="0" aria-pressed="true">ERP</button><button type="button" data-i="1" aria-pressed="false">School</button><button type="button" data-i="2" aria-pressed="false">FinRep</button><button type="button" data-i="3" aria-pressed="false">Prep</button><button type="button" data-i="4" aria-pressed="false">People</button><button type="button" data-i="5" aria-pressed="false">Clearance</button></div>
+        <p class="demo-note">Real product screens, shown with example data</p>
       </div>
     </div>
   </div>
@@ -507,41 +752,34 @@
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
     els.forEach((el) => io.observe(el));
   } else els.forEach((el) => el.classList.add('in'));
-  // hero preview: one real product at a time
+  // hero preview: real product screens with example data
   const M = [
-    { url: 'cdm24.netlify.app', logo: 'img/cdm24.webp', name: 'CDM ERP', chart: 'Revenue this week',
-      k: [['Sales today', '2,486', '▲ 12%'], ['Items in stock', '1,204', '▲ 4%'], ['Low stock', '7', 'reorder']], bars: [42, 58, 50, 72, 64, 88, 78],
-      f2: ['Low stock alert', 'Paracetamol · 12 left', '#fff1e0', '#f28c1e'], f1: 'Card · just now' },
-    { url: 'cdmschool.bolt.host', logo: 'img/cdmschool.webp', name: 'CDM School', chart: 'Attendance by class',
-      k: [['Students', '412', '▲ 18'], ['Present today', '96%', '▲ 2%'], ['Fees paid', '87%', '▲ 9%']], bars: [92, 88, 97, 85, 94, 90, 96],
-      f2: ['Report sheets ready', 'JSS 2 · 32 students', '#e9f1fd', '#1662c4'], f1: 'School fees · just now' },
-    { url: 'cdmprep.bolt.host', logo: 'img/cdmprep.webp', name: 'CDM Prep', chart: 'Mock exam scores',
-      k: [['Questions done', '1,240', '▲ 86'], ['Average score', '72%', '▲ 6%'], ['Study streak', '12 days', 'keep going']], bars: [48, 55, 52, 61, 66, 70, 78],
-      f2: ['Mock exam marked', 'Financial Reporting · 74%', '#e7f6ec', '#15803d'], f1: 'Subscription · just now' }
+    ['cdm24.netlify.app', 'Low stock alert', 'Vitamin C 1000mg · 6 left', '#fff1e0', '#f28c1e', 'POS · Card · just now'],
+    ['cdmschool.bolt.host/app', 'Report sheets ready', 'JSS 2 · 32 students', '#e9f1fd', '#1662c4', 'School fees · just now'],
+    ['cdmfinrep.bolt.host', 'Statements ready', 'FY2026 · balanced', '#e7f6ec', '#15803d', 'Annual plan · just now'],
+    ['cdmprep.bolt.host', 'Mock exam marked', 'Financial Reporting · 78%', '#e0f2fe', '#0284c7', 'Subscription · just now'],
+    ['cdmpeople.bolt.host/app', 'Payroll approved', 'November 2026 · 48 staff', '#ede9fe', '#6d28d9', 'Plan renewal · just now'],
+    ['cdmclearance.bolt.host/app', 'Invoice cleared', 'INV-0142 · IRN issued', '#dcfce7', '#15803d', 'Plan · just now']
   ];
   const doc = (id) => document.getElementById(id);
   const ic = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>';
-  const mtabs = document.querySelectorAll('.mtabs button');
+  const mtabs = document.querySelectorAll('.mtabs button'), scrs = document.querySelectorAll('.scr'), stage = doc('stage');
+  const fit = () => stage.style.setProperty('--s', stage.clientWidth / 860);
+  fit(); addEventListener('resize', fit); if ('ResizeObserver' in window) new ResizeObserver(fit).observe(stage);
   let mi = 0, timer = null;
-  function showM(i, animate = true) {
+  function showM(i) {
     mi = i; const m = M[i];
-    const paint = () => {
-      doc('mUrl').textContent = m.url + ' · Dashboard'; doc('mLogo').src = m.logo; doc('mName').textContent = m.name; doc('mChart').textContent = m.chart;
-      doc('mKpis').innerHTML = m.k.map(([a, b, c]) => `<div class="kpi"><small>${a}</small><b>${b}</b><em>${c}</em></div>`).join('');
-      doc('mBars').innerHTML = m.bars.map((h, j) => `<i style="height:${h}%;animation-delay:${j * 0.07}s"></i>`).join('');
-      doc('mF2b').textContent = m.f2[0]; doc('mF2s').textContent = m.f2[1];
-      Object.assign(doc('mF2i').style, { background: m.f2[2], color: m.f2[3] }); doc('mF2i').innerHTML = ic; doc('mF1s').textContent = m.f1;
-      doc('mMain').classList.remove('swap');
-    };
+    scrs.forEach((x) => x.classList.toggle('on', +x.dataset.k === i));
     mtabs.forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.i === i)));
-    if (animate) { doc('mMain').classList.add('swap'); setTimeout(paint, 300); } else paint();
+    doc('mUrl').textContent = m[0]; doc('mF2b').textContent = m[1]; doc('mF2s').textContent = m[2];
+    Object.assign(doc('mF2i').style, { background: m[3], color: m[4] }); doc('mF2i').innerHTML = ic; doc('mF1s').textContent = m[5];
   }
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const start = () => { if (!still) { clearInterval(timer); timer = setInterval(() => showM((mi + 1) % M.length), 5000); } };
   mtabs.forEach((b) => b.addEventListener('click', () => { showM(+b.dataset.i); start(); }));
   document.querySelector('.visual').addEventListener('mouseenter', () => clearInterval(timer));
   document.querySelector('.visual').addEventListener('mouseleave', start);
-  showM(0, false); start();
+  showM(0); start();
 </script>
 </body>
 </html>
