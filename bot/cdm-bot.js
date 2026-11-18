@@ -45,18 +45,26 @@
 
   // the whole robot (head, arms, hands, legs) with gestures, for the header and the welcome
   var FULL = '<svg class="full" viewBox="0 0 100 140" aria-hidden="true">' +
-    '<g class="b-wave left" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 28q-3 6 0 12"/></g><g class="b-wave w2 left" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 25q-4 9 0 18"/></g><g class="b-wave" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M86 28q3 6 0 12"/></g><g class="b-wave w2" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M91 25q4 9 0 18"/></g><g class="b-all"><rect x="37" y="98" width="10" height="24" rx="5" fill="currentColor"/><rect x="53" y="98" width="10" height="24" rx="5" fill="currentColor"/><rect x="33" y="119" width="16" height="8" rx="4" fill="#0f172a"/><rect x="51" y="119" width="16" height="8" rx="4" fill="#0f172a"/><g class="b-lua"><line x1="31" y1="67" x2="25" y2="82" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g class="b-lfa"><line x1="25" y1="82" x2="24" y2="95" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="24" cy="97" r="4.5" fill="#22d3ee" stroke="currentColor" stroke-width="2"/></g></g><rect x="45" y="52" width="10" height="9" rx="3" fill="currentColor"/><rect x="28" y="59" width="44" height="42" rx="13" fill="currentColor"/><rect x="37" y="68" width="26" height="20" rx="6" fill="#0f172a" stroke="#7dd3fc" stroke-opacity=".7" stroke-width="1.5"/><circle class="b-heart" cx="50" cy="78" r="4" fill="#f472b6"/><g class="b-pad"><rect x="34" y="80" width="24" height="17" rx="2" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><line x1="38" y1="85" x2="54" y2="85" stroke="#cbd5e1" stroke-width="1.5"/><line x1="38" y1="89" x2="54" y2="89" stroke="#cbd5e1" stroke-width="1.5"/><line x1="38" y1="93" x2="48" y2="93" stroke="#cbd5e1" stroke-width="1.5"/></g><g class="b-rua"><line x1="69" y1="67" x2="75" y2="82" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g class="b-rfa"><line x1="75" y1="82" x2="76" y2="95" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><line class="b-pen" x1="76" y1="97" x2="76" y2="106" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/><circle cx="76" cy="97" r="4.5" fill="#22d3ee" stroke="currentColor" stroke-width="2"/></g></g><g class="b-head"><line x1="50" y1="4" x2="50" y2="13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle class="b-ant" cx="50" cy="4" r="4" fill="#22d3ee" stroke="currentColor" stroke-width="2"/><rect class="b-ear" x="20" y="25" width="6" height="13" rx="3" fill="#22d3ee" stroke="currentColor" stroke-width="2"/><rect class="b-ear" x="74" y="25" width="6" height="13" rx="3" fill="#22d3ee" stroke="currentColor" stroke-width="2"/><rect x="25" y="12" width="50" height="42" rx="15" fill="currentColor"/><rect x="31" y="18" width="38" height="29" rx="10" fill="#0f172a" stroke="#7dd3fc" stroke-opacity=".7" stroke-width="2"/><g class="b-eyes" fill="#5eead4"><rect x="38" y="24" width="7" height="10" rx="3.5"/><rect x="55" y="24" width="7" height="10" rx="3.5"/></g><rect class="b-mouth" x="45" y="38" width="10" height="3" rx="1.5" fill="#5eead4"/><circle cx="35.5" cy="38" r="2" fill="#f472b6" opacity=".55"/><circle cx="64.5" cy="38" r="2" fill="#f472b6" opacity=".55"/></g></g>' + '</svg>'
+    '<g class="b-wave left" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 28q-3 6 0 12"/></g><g class="b-wave w2 left" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 25q-4 9 0 18"/></g><g class="b-wave" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M86 28q3 6 0 12"/></g><g class="b-wave w2" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M91 25q4 9 0 18"/></g><g class="b-all"><g class="b-ll"><rect x="37" y="98" width="10" height="24" rx="5" fill="currentColor"/><rect x="33" y="119" width="16" height="8" rx="4" fill="#0f172a"/></g><g class="b-rl"><rect x="53" y="98" width="10" height="24" rx="5" fill="currentColor"/><rect x="51" y="119" width="16" height="8" rx="4" fill="#0f172a"/></g><g class="b-lua"><line x1="31" y1="67" x2="25" y2="82" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g class="b-lfa"><line x1="25" y1="82" x2="24" y2="95" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="24" cy="97" r="4.5" fill="#22d3ee" stroke="currentColor" stroke-width="2"/></g></g><rect x="45" y="52" width="10" height="9" rx="3" fill="currentColor"/><rect x="28" y="59" width="44" height="42" rx="13" fill="currentColor"/><rect x="37" y="68" width="26" height="20" rx="6" fill="#0f172a" stroke="#7dd3fc" stroke-opacity=".7" stroke-width="1.5"/><circle class="b-heart" cx="50" cy="78" r="4" fill="#f472b6"/><g class="b-pad"><rect x="34" y="80" width="24" height="17" rx="2" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/><line x1="38" y1="85" x2="54" y2="85" stroke="#cbd5e1" stroke-width="1.5"/><line x1="38" y1="89" x2="54" y2="89" stroke="#cbd5e1" stroke-width="1.5"/><line x1="38" y1="93" x2="48" y2="93" stroke="#cbd5e1" stroke-width="1.5"/></g><g class="b-rua"><line x1="69" y1="67" x2="75" y2="82" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><g class="b-rfa"><line x1="75" y1="82" x2="76" y2="95" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><line class="b-pen" x1="76" y1="97" x2="76" y2="106" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/><circle cx="76" cy="97" r="4.5" fill="#22d3ee" stroke="currentColor" stroke-width="2"/></g></g><g class="b-head"><line x1="50" y1="4" x2="50" y2="13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle class="b-ant" cx="50" cy="4" r="4" fill="#22d3ee" stroke="currentColor" stroke-width="2"/><rect class="b-ear" x="20" y="25" width="6" height="13" rx="3" fill="#22d3ee" stroke="currentColor" stroke-width="2"/><rect class="b-ear" x="74" y="25" width="6" height="13" rx="3" fill="#22d3ee" stroke="currentColor" stroke-width="2"/><rect x="25" y="12" width="50" height="42" rx="15" fill="currentColor"/><rect x="31" y="18" width="38" height="29" rx="10" fill="#0f172a" stroke="#7dd3fc" stroke-opacity=".7" stroke-width="2"/><g class="b-eyes" fill="#5eead4"><rect x="38" y="24" width="7" height="10" rx="3.5"/><rect x="55" y="24" width="7" height="10" rx="3.5"/></g><rect class="b-mouth" x="45" y="38" width="10" height="3" rx="1.5" fill="#5eead4"/><circle cx="35.5" cy="38" r="2" fill="#f472b6" opacity=".55"/><circle cx="64.5" cy="38" r="2" fill="#f472b6" opacity=".55"/></g></g>' + '</svg>'
 
   var CSS = [
     ':host{all:initial}',
     '[hidden]{display:none!important}',
     '*{box-sizing:border-box;font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}',
-    '.launch{position:fixed;right:18px;bottom:18px;z-index:2147483000;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;background:#0b2a55;color:#fff;border-radius:999px;padding:7px 18px 7px 8px;font-size:15px;font-weight:600;box-shadow:0 10px 30px rgba(2,14,40,.35)}',
-    '.launch:hover{background:#123c78}.launch:focus-visible,button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #f28c1e;outline-offset:2px}',
-    '.launch .bot{width:38px;height:38px;color:#fff}',
-    '.tip{position:fixed;right:18px;bottom:78px;z-index:2147483000;background:#fff;color:#0f172a;border-radius:14px;padding:10px 34px 10px 14px;font-size:14px;box-shadow:0 8px 24px rgba(2,14,40,.2);max-width:240px}',
-    '.tip button{position:absolute;right:6px;top:6px;border:0;background:none;font-size:16px;cursor:pointer;color:#64748b}',
-    '.panel{position:fixed;right:12px;bottom:84px;z-index:2147483001;width:min(390px,calc(100vw - 24px));height:min(600px,calc(100vh - 110px));display:flex;flex-direction:column;background:#fff;color:#0f172a;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(2,14,40,.35);border:1px solid #e2e8f0}',
+    'button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #f28c1e;outline-offset:2px}',
+    '.dock{position:fixed;right:12px;bottom:6px;z-index:2147483000;display:flex;align-items:flex-end;gap:4px;pointer-events:none}',
+    '.dock>*{pointer-events:auto}',
+    '.rbtn{position:relative;border:0;background:none;padding:0;margin:0;cursor:pointer;width:74px;height:104px;filter:drop-shadow(0 6px 10px rgba(2,14,40,.35))}',
+    '.rbtn .full{width:74px;height:104px;color:#0b2a55;overflow:visible}',
+    '.rbtn:focus-visible{outline:3px solid #f28c1e;outline-offset:2px;border-radius:12px}',
+    '.min{position:absolute;top:0;right:-2px;width:24px;height:24px;border-radius:50%;border:1px solid #cbd5e1;background:#fff;color:#0b2a55;font:700 15px/20px sans-serif;cursor:pointer;box-shadow:0 2px 6px rgba(2,14,40,.2);padding:0}',
+    '.say{position:relative;max-width:200px;margin-bottom:64px;background:#fff;color:#0f172a;border-radius:16px 16px 4px 16px;padding:9px 26px 9px 12px;font-size:13.5px;line-height:1.35;box-shadow:0 8px 24px rgba(2,14,40,.22);cursor:pointer;animation:cdmx-pop .35s ease-out}',
+    '.say button{position:absolute;right:4px;top:3px;border:0;background:none;color:#94a3b8;font-size:15px;cursor:pointer;padding:2px 4px}',
+    '.mini{position:fixed;right:14px;bottom:14px;z-index:2147483000;width:54px;height:54px;border-radius:50%;border:0;background:#0b2a55;cursor:pointer;box-shadow:0 8px 20px rgba(2,14,40,.35);display:flex;align-items:center;justify-content:center;padding:0}',
+    '.mini .bot{width:38px;height:38px;color:#fff}',
+    '.grow{position:fixed;right:8px;bottom:58px;z-index:2147483001;width:22px;height:22px;border-radius:50%;border:1px solid #cbd5e1;background:#fff;color:#0b2a55;font:700 12px/20px sans-serif;cursor:pointer;padding:0;box-shadow:0 2px 6px rgba(2,14,40,.2)}',
+    '@keyframes cdmx-pop{from{opacity:0;transform:translateY(8px) scale(.9)}to{opacity:1;transform:none}}',
+    '.panel{position:fixed;right:12px;bottom:16px;z-index:2147483001;width:min(390px,calc(100vw - 24px));height:min(620px,calc(100vh - 40px));display:flex;flex-direction:column;background:#fff;color:#0f172a;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(2,14,40,.35);border:1px solid #e2e8f0}',
     '.hd{display:flex;align-items:center;gap:10px;background:#0b2a55;color:#fff;padding:12px 12px 12px 14px}',
     '.hd .bot{width:44px;height:44px;color:#fff;flex:none}.hd b{display:block;font-size:16px}.hd small{display:block;font-size:12px;opacity:.85}',
     '.hd .sp{flex:1;min-width:0}.ib{border:1px solid rgba(255,255,255,.45);background:none;color:#fff;border-radius:8px;width:34px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer}.ib.on{background:rgba(255,255,255,.2)}',
@@ -91,8 +99,29 @@
     '.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}',
     '.full{display:inline-block;flex:none;overflow:visible} .full *{transform-box:view-box} .full .b-wave{opacity:0} .full .b-all{transform-origin:50px 128px} .full .b-head{transform-origin:50px 56px} .full .b-eyes{transform-box:fill-box;transform-origin:50% 50%} .full .b-mouth{transform-box:fill-box;transform-origin:50% 50%} .full .b-lua{transform-origin:31px 67px}.full .b-lfa{transform-origin:25px 82px} .full .b-rua{transform-origin:69px 67px}.full .b-rfa{transform-origin:75px 82px} .full .b-pad,.full .b-pen{opacity:0} .full.s-idle .b-all{animation:cdmf-sway 4s ease-in-out infinite} .full.s-idle .b-rua{animation:cdmf-wave-up 6s ease-in-out infinite} .full.s-idle .b-rfa{animation:cdmf-wave-hand 6s ease-in-out infinite} .full.s-idle .b-lua{animation:cdmf-swing 4s ease-in-out infinite} .full:not(.s-still) .b-eyes{animation:cdmf-blink 4.6s infinite} .full.s-idle .b-ant{animation:cdmf-glow 2.4s ease-in-out infinite} .full.s-listening .b-lua{transform:rotate(95deg)} .full.s-listening .b-lfa{transform:rotate(-248deg)} .full.s-listening .b-head{animation:cdmf-tilt-l 1.6s ease-in-out infinite} .full.s-listening .b-ear{animation:cdmf-ear .8s ease-in-out infinite alternate} .full.s-listening .b-wave{animation:cdmf-in 1s ease-in infinite} .full.s-thinking .b-rua{transform:rotate(-95deg)} .full.s-thinking .b-rfa{animation:cdmf-scratch 1.2s ease-in-out infinite} .full.s-thinking .b-lua{transform:rotate(-12deg)} .full.s-thinking .b-lfa{transform:rotate(-100deg)} .full.s-thinking .b-head{animation:cdmf-tilt-r 2s ease-in-out infinite} .full.s-thinking .b-eyes{animation:cdmf-scan 1.3s ease-in-out infinite} .full.s-thinking .b-ant{animation:cdmf-flash .5s steps(2) infinite} .full.s-writing .b-pad,.full.s-writing .b-pen{opacity:1} .full.s-writing .b-lua{transform:rotate(-10deg)} .full.s-writing .b-lfa{transform:rotate(-80deg)} .full.s-writing .b-rua{transform:rotate(22deg)} .full.s-writing .b-rfa{animation:cdmf-write .45s ease-in-out infinite alternate} .full.s-writing .b-head{transform:rotate(6deg) translateY(1px)} .full.s-writing .b-eyes{animation:cdmf-read 1s ease-in-out infinite} .full.s-talking .b-mouth{animation:cdmf-talk .22s ease-in-out infinite alternate} .full.s-talking .b-lua{animation:cdmf-gest-l 1.4s ease-in-out infinite} .full.s-talking .b-lfa{animation:cdmf-gest-lf 1.4s ease-in-out infinite} .full.s-talking .b-rua{animation:cdmf-gest-r 1.4s ease-in-out infinite .35s} .full.s-talking .b-rfa{animation:cdmf-gest-rf 1.4s ease-in-out infinite .35s} .full.s-talking .b-head{animation:cdmf-nod .7s ease-in-out infinite} .full.s-talking .b-wave{animation:cdmf-wv 1s ease-out infinite} .full.s-talking .b-wave.w2{animation-delay:.33s} .full .b-wave{transform-box:fill-box;transform-origin:0 50%}.full .b-wave.left{transform-origin:100% 50%} @keyframes cdmf-sway{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}} @keyframes cdmf-swing{0%,100%{transform:rotate(4deg)}50%{transform:rotate(-4deg)}} @keyframes cdmf-wave-up{0%,55%,100%{transform:rotate(0)}62%,92%{transform:rotate(-130deg)}} @keyframes cdmf-wave-hand{0%,62%,92%,100%{transform:rotate(0)}68%,80%{transform:rotate(-35deg)}74%,86%{transform:rotate(15deg)}} @keyframes cdmf-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}} @keyframes cdmf-glow{0%,100%{opacity:1}50%{opacity:.45}} @keyframes cdmf-tilt-l{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(-3deg)}} @keyframes cdmf-tilt-r{0%,100%{transform:rotate(8deg)}50%{transform:rotate(4deg)}} @keyframes cdmf-scan{0%,100%{transform:translateX(-14%)}50%{transform:translateX(14%)}} @keyframes cdmf-flash{from{opacity:1}to{opacity:.25}} @keyframes cdmf-ear{from{opacity:.5}to{opacity:1}} @keyframes cdmf-in{0%{opacity:0;transform:scale(1.25)}100%{opacity:.9;transform:scale(.8)}} @keyframes cdmf-scratch{0%,100%{transform:rotate(245deg)}50%{transform:rotate(232deg)}} @keyframes cdmf-write{from{transform:rotate(118deg)}to{transform:rotate(132deg)}} @keyframes cdmf-read{0%{transform:translate(-12%,12%)}100%{transform:translate(12%,12%)}} @keyframes cdmf-talk{from{transform:scaleY(.35)}to{transform:scaleY(1.6)}} @keyframes cdmf-nod{0%,100%{transform:rotate(0)}50%{transform:rotate(-3deg) translateY(-1px)}} @keyframes cdmf-gest-l{0%,100%{transform:rotate(25deg)}50%{transform:rotate(60deg)}} @keyframes cdmf-gest-lf{0%,100%{transform:rotate(-70deg)}50%{transform:rotate(-30deg)}} @keyframes cdmf-gest-r{0%,100%{transform:rotate(-25deg)}50%{transform:rotate(-60deg)}} @keyframes cdmf-gest-rf{0%,100%{transform:rotate(70deg)}50%{transform:rotate(30deg)}} @keyframes cdmf-wv{0%{opacity:.9;transform:scale(.7)}100%{opacity:0;transform:scale(1.25)}} @media (prefers-reduced-motion: reduce){.full *{animation:none!important}}',
     '.hd .full{width:69px;height:96px;color:#fff;flex:none}.hd{padding-top:6px;padding-bottom:6px}.hello .full{width:86px;height:120px;color:#0b2a55;flex:none}',
+    '.full.a-backflip .b-all{transform-origin:50px 72px;animation:cdmx-back 1.5s ease-in-out}',
+    '.full.a-frontflip .b-all{transform-origin:50px 72px;animation:cdmx-front 1.5s ease-in-out}',
+    '.full.a-backflip .b-lua,.full.a-frontflip .b-lua{transform:rotate(150deg)}.full.a-backflip .b-rua,.full.a-frontflip .b-rua{transform:rotate(-150deg)}',
+    '@keyframes cdmx-back{0%{transform:none}15%{transform:translateY(5px) scaleY(.92)}55%{transform:translateY(-36px) rotate(-200deg)}85%{transform:translateY(-6px) rotate(-360deg)}100%{transform:rotate(-360deg)}}',
+    '@keyframes cdmx-front{0%{transform:none}15%{transform:translateY(5px) scaleY(.92)}55%{transform:translateY(-36px) rotate(200deg)}85%{transform:translateY(-6px) rotate(360deg)}100%{transform:rotate(360deg)}}',
+    '.full.a-dance .b-all{animation:cdmx-sway .6s ease-in-out 4 alternate}.full.a-dance .b-head{animation:cdmx-bob .3s ease-in-out 8 alternate}',
+    '.full.a-dance .b-lua{animation:cdmx-dl .6s ease-in-out 4 alternate}.full.a-dance .b-rua{animation:cdmx-dr .6s ease-in-out 4 alternate}',
+    '.full.a-dance .b-ll{animation:cdmx-kick .6s ease-in-out 4 alternate}',
+    '@keyframes cdmx-sway{from{transform:rotate(-9deg) translateY(0)}to{transform:rotate(9deg) translateY(-4px)}}@keyframes cdmx-bob{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}',
+    '@keyframes cdmx-dl{from{transform:rotate(20deg)}to{transform:rotate(150deg)}}@keyframes cdmx-dr{from{transform:rotate(-150deg)}to{transform:rotate(-20deg)}}@keyframes cdmx-kick{from{transform:rotate(0)}to{transform:rotate(18deg)}}',
+    '.full .b-ll{transform-origin:42px 100px}.full .b-rl{transform-origin:58px 100px}',
+    '.full.a-jacks .b-all{animation:cdmx-hop .5s ease-in-out 4}.full.a-jacks .b-lua{animation:cdmx-jl .5s ease-in-out 4}.full.a-jacks .b-rua{animation:cdmx-jr .5s ease-in-out 4}',
+    '.full.a-jacks .b-ll{animation:cdmx-ll .5s ease-in-out 4}.full.a-jacks .b-rl{animation:cdmx-rl .5s ease-in-out 4}',
+    '@keyframes cdmx-hop{0%,100%{transform:none}50%{transform:translateY(-10px)}}@keyframes cdmx-jl{0%,100%{transform:rotate(0)}50%{transform:rotate(160deg)}}@keyframes cdmx-jr{0%,100%{transform:rotate(0)}50%{transform:rotate(-160deg)}}',
+    '@keyframes cdmx-ll{0%,100%{transform:rotate(0)}50%{transform:rotate(14deg)}}@keyframes cdmx-rl{0%,100%{transform:rotate(0)}50%{transform:rotate(-14deg)}}',
+    '.full.a-squats .b-all{transform-origin:50px 127px;animation:cdmx-squat .6s ease-in-out 4}.full.a-squats .b-lua{transform:rotate(80deg)}.full.a-squats .b-rua{transform:rotate(-80deg)}',
+    '@keyframes cdmx-squat{0%,100%{transform:none}50%{transform:scaleY(.84)}}',
+    '.full.a-curls .b-lfa{animation:cdmx-cl .5s ease-in-out 4 alternate}.full.a-curls .b-rfa{animation:cdmx-cr .5s ease-in-out 4 alternate .25s}.full.a-curls .b-all{animation:cdmx-bob .5s ease-in-out 4 alternate}',
+    '@keyframes cdmx-cl{from{transform:rotate(0)}to{transform:rotate(-150deg)}}@keyframes cdmx-cr{from{transform:rotate(0)}to{transform:rotate(150deg)}}',
+    '.full.a-wave .b-rua{animation:cdmx-wu 2.4s ease-in-out}.full.a-wave .b-rfa{animation:cdmx-wh 2.4s ease-in-out}',
+    '@keyframes cdmx-wu{0%,100%{transform:rotate(0)}15%,85%{transform:rotate(-130deg)}}@keyframes cdmx-wh{0%,15%,85%,100%{transform:rotate(0)}30%,60%{transform:rotate(-35deg)}45%,75%{transform:rotate(15deg)}}',
     '@media (prefers-reduced-motion: reduce){*{animation:none!important}}',
-    '@media print{.launch,.panel,.tip{display:none}}',
+    '@media print{.dock,.mini,.grow,.panel{display:none}}',
   ].join('\n')
 
   var ICON = {
@@ -128,8 +157,11 @@
   host.id = 'cdm-bot'
   var root = host.attachShadow ? host.attachShadow({ mode: 'open' }) : host
   root.innerHTML = '<style>' + CSS + '</style>' +
-    '<button class="launch" type="button" aria-expanded="false" aria-controls="cdm-bot-panel">' + BOT.replace('class="bot"', 'class="bot s-idle"') + '<span>Chat with us</span></button>' +
-    '<div class="tip" hidden><span>Hi! Need help choosing? Ask me anything about CDM.</span><button type="button" aria-label="Hide">×</button></div>' +
+    '<div class="dock"><div class="say" hidden role="status"><span></span><button type="button" aria-label="Stop these messages">×</button></div>' +
+      '<div style="position:relative"><button class="rbtn" type="button" aria-expanded="false" aria-controls="cdm-bot-panel" aria-label="Chat with the CDM Assistant" title="Chat with us">' +
+        FULL.replace('class="full"', 'class="full lbot s-idle"') + '</button><button class="min" type="button" aria-label="Make the assistant smaller" title="Make smaller">–</button></div></div>' +
+    '<button class="mini" type="button" hidden aria-label="Chat with the CDM Assistant" title="Chat with us">' + BOT.replace('class="bot"', 'class="bot s-idle"') + '</button>' +
+    '<button class="grow" type="button" hidden aria-label="Show the full assistant" title="Show the full assistant">+</button>' +
     '<section class="panel" id="cdm-bot-panel" role="dialog" aria-label="CDM Assistant chat" hidden>' +
       '<div class="hd">' + FULL.replace('class="full"', 'class="full hdbot s-idle"') + '<div class="sp"><b>CDM Assistant</b><small class="st" aria-live="polite">Ask about any CDM app</small></div>' +
         '<button class="ib vo" type="button"></button><button class="ib cl" type="button" aria-label="Close the chat">' + ICON.x + '</button></div>' +
@@ -141,7 +173,7 @@
         '<div class="note">AI assistant. Please don\'t share passwords or card details.</div></form>' +
     '</section>'
   var $ = function (s) { return root.querySelector(s) }
-  var launch = $('.launch'), tip = $('.tip'), panel = $('.panel'), list = $('.list'), form = $('.ft'), input = $('textarea'),
+  var dock = $('.dock'), launch = $('.rbtn'), lbot = $('.lbot'), say = $('.say'), minB = $('.min'), mini = $('.mini'), grow = $('.grow'), panel = $('.panel'), list = $('.list'), form = $('.ft'), input = $('textarea'),
     sendB = $('.send'), micB = $('.mic'), voB = $('.vo'), hdBot = $('.hdbot'), status = $('.st'), wa = $('.wa')
 
   var canSpeak = 'speechSynthesis' in window && typeof window.SpeechSynthesisUtterance !== 'undefined'
@@ -166,13 +198,12 @@
     micB.setAttribute('aria-pressed', listening ? 'true' : 'false')
     sendB.disabled = busy || !input.value.trim()
     wa.href = waLink
-    setBot(launch.querySelector('.bot'), busy ? 'thinking' : 'idle')
   }
 
   function render() {
     var h = ''
     if (!msgs.length) {
-      h += '<div class="hello">' + BOT.replace('class="bot"', 'class="bot s-idle"') + '<div>Hi! I\'m the CDM Assistant. I can help you choose the right app, tell you prices and set up a free demo.</div></div><div class="chips">'
+      h += '<div class="hello"><div>Hi! I\'m the CDM Assistant. I can help you choose the right app, tell you prices and set up a free demo.</div></div><div class="chips">'
       ;(STARTERS[APP] || STARTERS.site).forEach(function (s) { h += '<button type="button">' + esc(s) + '</button>' })
       h += '</div>'
     }
@@ -304,18 +335,55 @@
   }
 
   // ---------- events ----------
+  var small = local('cdm-bot-small') === '1'
+  function showLauncher() {
+    dock.hidden = open || small
+    mini.hidden = open || !small
+    grow.hidden = open || !small
+  }
   function setOpen(v) {
     open = v
     panel.hidden = !v
-    tip.hidden = true
+    say.hidden = true
     launch.setAttribute('aria-expanded', v ? 'true' : 'false')
-    launch.querySelector('span').textContent = v ? 'Close' : 'Chat with us'
+    showLauncher()
     if (v) { render(); setTimeout(function () { input.focus() }, 50) } else { hush(); if (stopListen) stopListen() }
   }
-  launch.addEventListener('click', function () { setOpen(!open) })
-  $('.cl').addEventListener('click', function () { setOpen(false); launch.focus() })
-  tip.querySelector('button').addEventListener('click', function () { tip.hidden = true; store('cdm-bot-tip', '1') })
-  tip.querySelector('span').addEventListener('click', function () { setOpen(true) })
+  function launcherFocus() { (small ? mini : launch).focus() }
+  launch.addEventListener('click', function () { setOpen(true) })
+  mini.addEventListener('click', function () { setOpen(true) })
+  minB.addEventListener('click', function () { small = true; local('cdm-bot-small', '1'); showLauncher(); mini.focus() })
+  grow.addEventListener('click', function () { small = false; local('cdm-bot-small', '0'); showLauncher(); launch.focus() })
+  $('.cl').addEventListener('click', function () { setOpen(false); launcherFocus() })
+  say.querySelector('button').addEventListener('click', function (e) { e.stopPropagation(); say.hidden = true; store('cdm-bot-quiet', '1') })
+  say.addEventListener('click', function () { setOpen(true) })
+
+  // the robot's tricks while it waits, and a few friendly lines inviting people to chat
+  var TRICKS = { dance: 2400, backflip: 1500, frontflip: 1500, jacks: 2000, squats: 2400, curls: 2100, wave: 2400 }
+  var LINES = {
+    site: ['Hi! Need help choosing the right app? 👋', 'Ask me what CDM ERP costs 💰', 'Run a school? Ask me about CDM School 🏫', 'Studying for ICAN or ACCA? Ask about CDM Prep 📚', 'I can book you a free demo 📅', 'Payroll headache? Ask me about CDM People 💼'],
+    erp: ['Hi! Ask me what CDM ERP can do 🛒', 'Does it work offline? Ask me! 📶', 'Want prices for your shop? 💰', 'I can book you a free demo 📅'],
+    school: ['Hi! Ask me about CDM School 🏫', 'How much for your pupils? Ask me 💰', 'Parents can pay fees online. Ask how 💳', 'Want a free demo? 📅'],
+    prep: ['Preparing for ICAN, ANAN, ACCA or CPA? 📚', 'Ask me how the AI tutor works 🤖', 'Start practising for free! ✍️'],
+    finrep: ['Ask me about CDM FinRep 📊', 'Financial statements from your trial balance. Ask how!', 'Want a free demo? 📅'],
+    people: ['Payroll and PAYE made easy. Ask me! 💼', 'How much for your staff? Ask me 💰', 'Want a free demo? 📅'],
+    clearance: ['Getting ready for NRS e-invoicing? 🧾', 'Ask me what CDM Clearance costs 💰', 'Want a free demo? 📅'],
+    partners: ['Want to earn by selling CDM apps? 💸', 'Ask me how partners are paid', 'The training is free. Ask me! 🎓'],
+  }
+  var lines = LINES[APP] || LINES.site, lineAt = Math.floor(Math.random() * lines.length), sayTimer = 0
+  function trick() {
+    if (open || small || dock.hidden || host.style.display === 'none' || reduced || document.hidden) return
+    var names = Object.keys(TRICKS), t = names[Math.floor(Math.random() * names.length)]
+    lbot.setAttribute('class', 'full lbot a-' + t)
+    setTimeout(function () { lbot.setAttribute('class', 'full lbot s-' + (busy ? 'thinking' : 'idle')) }, TRICKS[t] + 100)
+  }
+  function chat(text) {
+    if (open || small || store('cdm-bot-quiet') || host.style.display === 'none' || document.hidden) return
+    say.querySelector('span').textContent = text || lines[lineAt++ % lines.length]
+    say.hidden = false
+    clearTimeout(sayTimer)
+    sayTimer = setTimeout(function () { say.hidden = true }, 7000)
+  }
   voB.addEventListener('click', function () { voiceOn = !voiceOn; local(VOICE, voiceOn ? 'on' : 'off'); if (!voiceOn) hush(); paintHeader() })
   micB.addEventListener('click', listen)
   form.addEventListener('submit', function (e) { e.preventDefault(); ask() })
@@ -327,7 +395,7 @@
     if (b.hasAttribute('data-say')) { var i = +b.getAttribute('data-say'); if (speaking === i) hush(); else say(i); return }
     if (b.parentNode && b.parentNode.className === 'chips') ask(b.textContent)
   })
-  root.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) { setOpen(false); launch.focus() } })
+  root.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) { setOpen(false); launcherFocus() } })
 
   // hide for signed-in people (they have Ask AI and the Help button) and while Ask AI is on the page,
   // so it never covers a till or a work screen
@@ -352,7 +420,10 @@
     if (window.MutationObserver) new MutationObserver(sync).observe(document.body, { childList: true, subtree: true })
     window.addEventListener('storage', sync)
     setInterval(sync, 3000)
-    if (!store('cdm-bot-tip') && !msgs.length) setTimeout(function () { if (!open && host.style.display !== 'none') { tip.hidden = false; store('cdm-bot-tip', '1') } }, 6000)
+    showLauncher()
+    setTimeout(function () { trick(); chat() }, 3500)
+    setInterval(trick, 9000)
+    setInterval(function () { chat() }, 24000)
     paintHeader()
   }
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start)
