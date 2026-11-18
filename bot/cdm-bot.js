@@ -323,9 +323,19 @@
   })
   root.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) { setOpen(false); launch.focus() } })
 
-  // hide while the signed-in Ask AI assistant is on the page
+  // hide for signed-in people (they have Ask AI and the Help button) and while Ask AI is on the page,
+  // so it never covers a till or a work screen
+  function signedIn() {
+    try {
+      for (var i = 0; i < window.localStorage.length; i++) {
+        var k = window.localStorage.key(i) || ''
+        if (/^sb-.+-auth-token$/.test(k) && window.localStorage.getItem(k)) return true
+      }
+    } catch (e) { }
+    return false
+  }
   function sync() {
-    var hide = !!document.querySelector(ASK_AI)
+    var hide = !!document.querySelector(ASK_AI) || (APP !== 'site' && signedIn())
     host.style.display = hide ? 'none' : ''
     if (hide && open) setOpen(false)
   }
@@ -334,6 +344,8 @@
     document.body.appendChild(host)
     sync()
     if (window.MutationObserver) new MutationObserver(sync).observe(document.body, { childList: true, subtree: true })
+    window.addEventListener('storage', sync)
+    setInterval(sync, 3000)
     if (!store('cdm-bot-tip') && !msgs.length) setTimeout(function () { if (!open && host.style.display !== 'none') { tip.hidden = false; store('cdm-bot-tip', '1') } }, 6000)
     paintHeader()
   }
