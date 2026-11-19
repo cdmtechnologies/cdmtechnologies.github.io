@@ -102,8 +102,8 @@
   .side .lg .chip img { width: 100%; height: 100%; object-fit: contain; }
   .main > * { transition: opacity .35s; }
   .main.swap > * { opacity: 0; }
-  .mtabs { display: flex; justify-content: center; gap: 8px; margin-top: 30px; flex-wrap: wrap; }
-  .mtabs button { font: 600 13.5px Inter, sans-serif; color: rgba(255,255,255,.8); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); padding: 7px 14px; border-radius: 999px; cursor: pointer; }
+  .mtabs { display: flex; justify-content: center; gap: 6px; margin-top: 30px; flex-wrap: wrap; }
+  .mtabs button { font: 600 13.5px Inter, sans-serif; color: rgba(255,255,255,.8); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); padding: 7px 12px; border-radius: 999px; cursor: pointer; }
   .mtabs button[aria-pressed="true"] { background: #fff; color: var(--navy); border-color: #fff; }
   .side span { height: 9px; border-radius: 5px; background: rgba(255,255,255,.18); }
   .side span.on { background: var(--orange); width: 80%; }
@@ -236,6 +236,31 @@
   .s-clr .tr { grid-template-columns: .8fr 1.3fr 1fr .9fr 1.1fr; padding: 11px 14px; }
   .s-clr .tr em { font-style: normal; font-size: 10.5px; font-weight: 600; border-radius: 999px; padding: 2px 9px; }
   .s-clr .ok { background: #dcfce7; color: #15803d; } .s-clr .vl { background: #dbeafe; color: #1d4ed8; } .s-clr .bad { background: #fee2e2; color: #b91c1c; } .s-clr .dr { background: #f1f5f9; color: #475569; }
+
+  /* Food */
+  .s-food { background: #f7faf7; }
+  .s-food .tb { gap: 14px; }
+  .s-food .tb .lg { width: 26px; height: 26px; border-radius: 7px; background: #15803d; display: grid; place-items: center; color: #fff; font-size: 14px; }
+  .s-food .tb > b { font-size: 14px; } .s-food .tb .prem { background: #f97316; color: #fff; border-radius: 999px; padding: 1px 8px; font-size: 10px; font-weight: 700; }
+  .s-food .tb a { padding: 6px 10px; border-radius: 8px; color: #475569; font-weight: 600; font-size: 11.5px; } .s-food .tb a.on { background: #ecfdf3; color: #166534; }
+  .s-food .bd { padding: 14px 18px; }
+  .s-food .days { display: flex; gap: 6px; margin: 10px 0; } .s-food .days span { flex: 1; text-align: center; border: 1px solid #e2e8f0; background: #fff; border-radius: 9px; padding: 5px 0; font-size: 11px; color: #475569; }
+  .s-food .days span b { display: block; font-size: 13px; color: #0f172a; } .s-food .days .on { background: #15803d; border-color: #15803d; color: #dcfce7; } .s-food .days .on b { color: #fff; }
+  .s-food .cols { display: grid; grid-template-columns: 1fr 1.9fr; gap: 12px; }
+  .s-food .sum { background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 12px 14px; }
+  .s-food .sum b.big { display: block; font: 700 24px Inter, sans-serif; } .s-food .sum b.big em { font-style: normal; font-size: 12px; font-weight: 500; color: #64748b; }
+  .s-food .pg { height: 7px; border-radius: 4px; background: #eef2f5; margin: 8px 0; } .s-food .pg i { display: block; height: 100%; width: 92%; border-radius: 4px; background: #16a34a; }
+  .s-food .mac { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; font-size: 10.5px; color: #64748b; } .s-food .mac b { display: block; color: #0f172a; font-size: 13px; }
+  .s-food .ate { margin-top: 8px; font-size: 11px; color: #166534; font-weight: 600; }
+  .s-food .ai { margin-top: 10px; background: #15803d; color: #fff; border-radius: 10px; padding: 8px 10px; font-size: 11.5px; display: flex; gap: 8px; align-items: center; }
+  .s-food .meals { display: grid; gap: 8px; }
+  .s-food .ml { background: #fff; border: 1px solid #e5e9f0; border-radius: 12px; padding: 9px 12px; }
+  .s-food .ml h6 { font: 600 11px Inter, sans-serif; color: #64748b; display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: .04em; }
+  .s-food .it { display: flex; align-items: center; gap: 8px; margin-top: 6px; border-radius: 9px; padding: 6px 8px; background: #f8fafc; border: 1px solid #f1f5f9; }
+  .s-food .it.ok { background: #f0fdf4; border-color: #bbf7d0; } .s-food .it.sw { background: #fff7ed; border-color: #fed7aa; }
+  .s-food .it b { font-size: 12.5px; } .s-food .it small { display: block; color: #64748b; font-size: 10.5px; }
+  .s-food .it .ch { margin-left: auto; display: flex; gap: 4px; } .s-food .it .ch span { border: 1px solid #e2e8f0; background: #fff; border-radius: 999px; padding: 2px 8px; font-size: 10px; color: #475569; }
+  .s-food .it .ch .on { background: #15803d; border-color: #15803d; color: #fff; } .s-food .it .ch .so { background: #f97316; border-color: #f97316; color: #fff; }
   .demo-note { text-align: center; font-size: 12.5px; color: rgba(255,255,255,.6); margin-top: 10px; }
   .browser .demo { font-size: 10.5px; font-weight: 700; color: #b45309; background: #fff1e0; border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
   .float { position: absolute; background: #fff; color: var(--ink); border-radius: 16px; padding: 12px 14px; box-shadow: 0 18px 40px rgba(2, 10, 30, .35); display: flex; gap: 12px; align-items: center; font-size: 13px; animation: bob 6s ease-in-out infinite; }
@@ -550,11 +575,30 @@
                 </div>
               </div>
             </div>
+            <!-- CDM Food -->
+            <div class="scr s-food" data-k="6">
+              <div class="tb"><span class="lg">🍲</span><b>CDM Food</b><span class="prem">Premium</span><span class="sp"></span><a class="on">My plan</a><a>Explore</a><a>My foods</a><a>Shopping</a><a>Progress</a><a>Account</a><span class="pb">🌐 English</span></div>
+              <div class="bd">
+                <div class="hd" style="display:flex;justify-content:space-between;align-items:flex-start"><div><h4>My week</h4><p>Planned from Nigerian dishes · steady blood sugar · 1,750 kcal a day</p></div><span class="btnb" style="background:#15803d">✨ Fill my week</span></div>
+                <div class="days"><span>Mon<b>16</b></span><span>Tue<b>17</b></span><span class="on">Wed<b>18</b></span><span>Thu<b>19</b></span><span>Fri<b>20</b></span><span>Sat<b>21</b></span><span>Sun<b>22</b></span></div>
+                <div class="cols">
+                  <div class="sum"><small style="color:#64748b">Wednesday 18 November</small><b class="big">1,610 <em>of 1,750 kcal</em></b><div class="pg"><i></i></div>
+                    <div class="mac"><span><b>82 g</b>Protein</span><span><b>196 g</b>Carbs</span><span><b>31 g</b>Fibre</span></div>
+                    <p class="ate">Eaten: 1,180 kcal · 2 of 3 meals as planned</p>
+                    <div class="ai">🤖 Make my dinners lighter this week</div></div>
+                  <div class="meals">
+                    <div class="ml"><h6><span>Breakfast</span><span>420 kcal · aim 438</span></h6><div class="it ok"><span>🫘</span><span><b>Moi moi with pap</b><small>1 serving · low GI</small></span><span class="ch"><span class="on">✓ Eaten</span><span>Recipe</span></span></div></div>
+                    <div class="ml"><h6><span>Lunch</span><span>650 kcal · aim 613</span></h6><div class="it sw"><span>🍚</span><span><b>Jollof rice with grilled chicken</b><small>Had instead: Shawarma · 650 kcal</small></span><span class="ch"><span class="so">⇄ Swapped</span><span>Recipe</span></span></div></div>
+                    <div class="ml"><h6><span>Dinner</span><span>540 kcal · aim 613</span></h6><div class="it"><span>🥬</span><span><b>Efo riro with eba</b><small>1 serving · high fibre</small></span><span class="ch"><span>Eaten</span><span>Skipped</span><span>Recipe</span></span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="float f2" aria-hidden="true"><div class="ic" id="mF2i"></div><div><b id="mF2b"></b><span id="mF2s"></span></div></div>
         <div class="float f1" aria-hidden="true"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><div><b>Payment received</b><span id="mF1s">Card · just now</span></div></div>
-        <div class="mtabs" role="group" aria-label="Preview a product"><button type="button" data-i="0" aria-pressed="true">ERP</button><button type="button" data-i="1" aria-pressed="false">School</button><button type="button" data-i="2" aria-pressed="false">FinRep</button><button type="button" data-i="3" aria-pressed="false">Prep</button><button type="button" data-i="4" aria-pressed="false">People</button><button type="button" data-i="5" aria-pressed="false">Clearance</button></div>
+        <div class="mtabs" role="group" aria-label="Preview a product"><button type="button" data-i="0" aria-pressed="true">ERP</button><button type="button" data-i="1" aria-pressed="false">School</button><button type="button" data-i="2" aria-pressed="false">FinRep</button><button type="button" data-i="3" aria-pressed="false">Prep</button><button type="button" data-i="4" aria-pressed="false">People</button><button type="button" data-i="5" aria-pressed="false">Clearance</button><button type="button" data-i="6" aria-pressed="false">Food</button></div>
         <p class="demo-note">Real product screens, shown with example data</p>
       </div>
     </div>
@@ -769,7 +813,8 @@
     ['cdmfinrep.bolt.host', 'Statements ready', 'FY2026 · balanced', '#e7f6ec', '#15803d', 'Annual plan · just now'],
     ['cdmprep.bolt.host', 'Mock exam marked', 'Financial Reporting · 78%', '#e0f2fe', '#0284c7', 'Subscription · just now'],
     ['cdmpeople.bolt.host/app', 'Payroll approved', 'November 2026 · 48 staff', '#ede9fe', '#6d28d9', 'Plan renewal · just now'],
-    ['cdmclearance.bolt.host/app', 'Invoice cleared', 'INV-0142 · IRN issued', '#dcfce7', '#15803d', 'Plan · just now']
+    ['cdmclearance.bolt.host/app', 'Invoice cleared', 'INV-0142 · IRN issued', '#dcfce7', '#15803d', 'Plan · just now'],
+    ['cdm-food.netlify.app', 'Week planned', '21 meals · halal · low GI', '#dcfce7', '#15803d', 'Premium · just now']
   ];
   const doc = (id) => document.getElementById(id);
   const ic = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>';
