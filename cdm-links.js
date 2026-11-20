@@ -3,6 +3,7 @@
    app-links endpoint (remembered for 10 minutes), then switches any link, button or address text that points at an
    older address of a CDM app to the current one. If the endpoint cannot be reached, the built-in list below is used,
    so links are never broken. The same file is copied into every CDM app and the CDM Technologies website.
+   An address is https://name.domain, optionally with one folder (https://cdmtechnologies.github.io/cdm-studio).
    window.CDM_LINKS.url('cdmschool') gives an app's current address; .fix(url) switches one address. */
 (function () {
   'use strict';
@@ -21,13 +22,15 @@
     { id: 'cdmclearance', url: 'https://cdmclearance.bolt.host', old_urls: [] },
     { id: 'cdmfood', url: 'https://cdm-food.netlify.app', old_urls: [] },
     { id: 'cdmpartners', url: 'https://cdmpartners.bolt.host', old_urls: [] },
+    { id: 'cdmstudio', url: 'https://cdmtechnologies.github.io/cdm-studio', old_urls: [] },
     { id: 'home', url: 'https://cdmtechnologies.github.io', old_urls: [] }
   ];
-  var ORIGIN = /^https:\/\/([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/;
+  var ORIGIN = /^https:\/\/([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}(\/[a-z0-9-]+)?$/;
 
   var apps = BUILT_IN;
-  var map = {}; // old origin -> current origin
-  var hostMap = {}; // old host -> current host
+  var map = {}; // old address -> current address
+  var hostMap = {}; // the same without https://, for addresses written as text
+  var current = {}; // addresses apps use now: never switched
 
   function clean(list) {
     if (!Array.isArray(list)) return null;
@@ -54,7 +57,8 @@
       if (b) for (var k = 0; k < b.old_urls.length; k++) olds.push(b.old_urls[k]);
       byId[list[i].id] = { id: list[i].id, url: list[i].url, old_urls: olds };
     }
-    var m = {}, hm = {}, current = {}, out = [];
+    var m = {}, hm = {}, out = [];
+    current = {};
     for (var id in byId) { current[byId[id].url] = true; out.push(byId[id]); }
     for (i = 0; i < out.length; i++) {
       for (var j = 0; j < out[i].old_urls.length; j++) {
@@ -69,17 +73,23 @@
 
   function fix(href) {
     if (typeof href !== 'string' || href.slice(0, 8) !== 'https://') return href;
-    var end = href.indexOf('/', 8);
-    var origin = (end < 0 ? href : href.slice(0, end)).toLowerCase();
-    var q = origin.search(/[?#]/);
-    if (q > 0) origin = origin.slice(0, q);
+    var m = /^https:\/\/[^/?#]+/.exec(href);
+    if (!m) return href;
+    var origin = m[0].toLowerCase();
+    var seg = /^\/([A-Za-z0-9-]+)(?=$|[/?#])/.exec(href.slice(m[0].length));
+    // the longer address (with its folder) wins: an app at https://host/folder is not the app at https://host
+    if (seg) {
+      var withPath = origin + '/' + seg[1].toLowerCase();
+      if (current[withPath]) return href;
+      if (map[withPath]) return map[withPath] + href.slice(withPath.length);
+    }
     var to = map[origin];
     return to ? to + href.slice(origin.length) : href;
   }
 
   var hostRe = null;
   function hostPattern() {
-    var hosts = Object.keys(hostMap);
+    var hosts = Object.keys(hostMap).sort(function (a, b) { return b.length - a.length; });
     if (!hosts.length) return null;
     return new RegExp('\\b(' + hosts.map(function (h) { return h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b', 'gi');
   }
