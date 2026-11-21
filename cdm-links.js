@@ -4,13 +4,15 @@
    older address of a CDM app to the current one. If the endpoint cannot be reached, the built-in list below is used,
    so links are never broken. The same file is copied into every CDM app and the CDM Technologies website.
    An address is https://name.domain, optionally with one folder (https://cdmtechnologies.github.io/cdm-studio).
-   window.CDM_LINKS.url('cdmschool') gives an app's current address; .fix(url) switches one address. */
+   window.CDM_LINKS.url('cdmschool') gives an app's current address; .fix(url) switches one address.
+   window.CDM_LINKS.aiOn('cdmprep') is false when the owner has switched that app's AI off in Partners
+   (the app then shows a WhatsApp button instead of its AI). Unknown or unreachable: AI stays on. */
 (function () {
   'use strict';
   if (window.CDM_LINKS) return;
   var ENDPOINT = 'https://uopvnuzjktebdsavwgbn.supabase.co/functions/v1/app-links';
-  var CACHE = 'cdm-links-v1';
-  var FRESH_MS = 10 * 60 * 1000;
+  var CACHE = 'cdm-links-v2';
+  var FRESH_MS = 3 * 60 * 1000;
   var KEEP_MS = 30 * 24 * 60 * 60 * 1000;
   // Built-in addresses: used until the endpoint answers, and whenever it cannot be reached.
   var BUILT_IN = [
@@ -23,6 +25,7 @@
     { id: 'cdmfood', url: 'https://cdm-food.netlify.app', old_urls: [] },
     { id: 'cdmpartners', url: 'https://cdmpartners.bolt.host', old_urls: [] },
     { id: 'cdmstudio', url: 'https://cdmtechnologies.github.io/cdm-studio', old_urls: [] },
+    { id: 'cdmsocial', url: 'https://cdmtechnologies.github.io/cdm-social', old_urls: [] },
     { id: 'home', url: 'https://cdmtechnologies.github.io', old_urls: [] }
   ];
   var ORIGIN = /^https:\/\/([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}(\/[a-z0-9-]+)?$/;
@@ -40,7 +43,7 @@
       if (!a || typeof a.id !== 'string' || typeof a.url !== 'string' || !ORIGIN.test(a.url)) continue;
       var old = [];
       if (Array.isArray(a.old_urls)) for (var j = 0; j < a.old_urls.length; j++) if (typeof a.old_urls[j] === 'string' && ORIGIN.test(a.old_urls[j])) old.push(a.old_urls[j]);
-      out.push({ id: a.id, url: a.url, old_urls: old });
+      out.push({ id: a.id, url: a.url, old_urls: old, ai_on: a.ai_on !== false });
     }
     return out.length ? out : null;
   }
@@ -55,7 +58,7 @@
       var olds = list[i].old_urls.slice();
       if (b && b.url !== list[i].url) olds.push(b.url);
       if (b) for (var k = 0; k < b.old_urls.length; k++) olds.push(b.old_urls[k]);
-      byId[list[i].id] = { id: list[i].id, url: list[i].url, old_urls: olds };
+      byId[list[i].id] = { id: list[i].id, url: list[i].url, old_urls: olds, ai_on: list[i].ai_on !== false };
     }
     var m = {}, hm = {}, out = [];
     current = {};
@@ -149,7 +152,9 @@
   window.CDM_LINKS = {
     url: function (id) { for (var i = 0; i < apps.length; i++) if (apps[i].id === id) return apps[i].url; return null; },
     fix: fix,
-    apps: function () { return apps.map(function (a) { return { id: a.id, url: a.url }; }); }
+    apps: function () { return apps.map(function (a) { return { id: a.id, url: a.url }; }); },
+    aiOn: function (id) { for (var i = 0; i < apps.length; i++) if (apps[i].id === id) return apps[i].ai_on !== false; return true; },
+    whatsapp: 'https://wa.me/2348064068800'
   };
 
   // 1. built-in list, or what was remembered last time
